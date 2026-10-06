@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chasing Chaos, Finding Home by Jenn Kassan | Figuring It Out™</title>
+<meta name="description" content="Figuring It Out™ with Jenn Kassan. Stories, community, and small steps forward. Home of Chasing Chaos, Finding Home: A Collection of Memories, Poems, and Stories.">
+<meta property="og:title" content="Chasing Chaos, Finding Home by Jenn Kassan">
+<meta property="og:description" content="A Collection of Memories, Poems, and Stories. Some journeys don't begin with a destination. They begin with a memory.">
+<meta property="og:image" content="https://jennkassan.com/assets/book-cover.webp">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Core FIO (Master Brand Guidelines v2.0) */
+  --cream:#F8F4EC; --forest:#214534; --gold:#C89D4A; --charcoal:#333333; --beige:#E8DDC8;
+  /* Chasing Chaos warm accents */
+  --parchment:#FCDEB7; --espresso:#342513; --earth:#825A38; --sunset:#F2B16E; --amber:#D67E2E; --pine:#384745;
+  --bg:var(--cream); --paper:color-mix(in srgb,var(--cream) 55%,#fff); --ink:var(--charcoal); --muted:rgba(51,51,51,.8); --line:var(--beige); --onforest:var(--cream);
+  --decor:1;
+  --serif-head:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --serif-sub:"Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --serif-body:"Libre Baskerville", Baskerville, Georgia, serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#384745; --paper:#214534; --ink:#F8F4EC; --muted:#E8DDC8; --line:rgba(232,221,200,.25); --forest:#214534; --onforest:#F8F4EC; --decor:0;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#384745; --paper:#214534; --ink:#F8F4EC; --muted:#E8DDC8; --line:rgba(232,221,200,.25); --forest:#214534; --onforest:#F8F4EC; --decor:0;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif-body);font-size:1rem;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--earth)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) a{color:var(--gold)}}
+:root[data-theme="dark"] a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+.narrow{width:min(720px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-weight:600;margin:0;line-height:1.15}
+h2{font-family:var(--serif-head);font-weight:600;font-size:clamp(2rem,4.2vw,2.9rem);letter-spacing:.005em;color:var(--forest)}
+h3{font-family:var(--serif-sub);font-weight:600;font-size:1.5rem}
+.lede{font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:1.4rem;color:var(--earth);margin:.4rem 0 0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lede{color:var(--gold)}}
+:root[data-theme="dark"] .lede{color:var(--gold)}
+.script{font-family:var(--serif-head);font-style:italic;font-weight:500}
+.rule{display:flex;align-items:center;gap:.6rem;justify-content:center;color:var(--gold);margin:1.1rem auto}
+.rule::before,.rule::after{content:"";height:1px;width:70px;background:currentColor;opacity:.7}
+.rule span{width:7px;height:7px;background:currentColor;transform:rotate(45deg)}
+section{padding:5.5rem 0}
+.center{text-align:center}
+
+/* ---------- header ---------- */
+.site-head{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink)}
+.brand img{width:42px;height:auto}
+.brand b{font-family:var(--serif-head);font-weight:700;letter-spacing:.05em;font-size:1.25rem}
+.brand sup{font-size:.55em}
+nav ul{list-style:none;display:flex;gap:1.6rem;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--ink);font-size:.95rem}
+nav a:hover{color:var(--earth)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:.4rem .7rem;font:inherit;font-size:.9rem;cursor:pointer}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav li a{display:block;padding:.7rem 0;border-bottom:1px solid var(--line)}
+}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--serif-body);font-size:.95rem;letter-spacing:.03em;text-decoration:none;padding:.85rem 1.4rem;border-radius:3px;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s}
+.btn-forest{background:var(--forest);color:#F8F4EC!important;border-color:var(--forest)}
+.btn-forest:hover{background:#384745}
+.btn-line{border-color:var(--earth);color:var(--earth)!important;background:transparent}
+.btn-line:hover{background:var(--earth);color:#fff!important}
+.btn-gold{background:var(--gold);color:#214534!important;border-color:var(--gold)}
+.btn-gold:hover{background:#C89D4A}
+.btn-pine{background:var(--pine);color:var(--cream)!important;border-color:var(--pine)}
+.btn-pine:hover{background:var(--forest)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn-forest{background:var(--gold);color:#384745!important;border-color:var(--gold)}:root:not([data-theme="light"]) .btn-line{border-color:var(--gold);color:var(--gold)!important}}
+:root[data-theme="dark"] .btn-forest{background:var(--gold);color:#384745!important;border-color:var(--gold)}
+:root[data-theme="dark"] .btn-line{border-color:var(--gold);color:var(--gold)!important}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:3.5rem 0 4.5rem;text-align:center;overflow:hidden}
+.decor{position:absolute;pointer-events:none;opacity:var(--decor)}
+.decor.leaves{left:-10px;top:0;width:clamp(120px,17vw,230px)}
+.decor.hills{right:0;top:30px;width:clamp(160px,26vw,340px);-webkit-mask-image:linear-gradient(to right,transparent,#000 35%);mask-image:linear-gradient(to right,transparent,#000 35%)}
+@media (max-width:700px){.decor.leaves{opacity:calc(var(--decor)*.45);width:110px}.decor.hills{opacity:calc(var(--decor)*.4);width:150px}}
+.hero-logo{width:clamp(170px,24vw,250px);margin:0 auto .6rem;animation:rise 1.2s ease-out both}
+.hero h1{font-family:var(--serif-head);font-size:clamp(1.7rem,7.4vw,4.6rem);letter-spacing:.04em;color:var(--forest);font-weight:700}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero h1{color:var(--ink)}}
+:root[data-theme="dark"] .hero h1{color:var(--ink)}
+.hero h1 sup{font-size:.3em;vertical-align:super;letter-spacing:0}
+.hero .tag{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:clamp(1.45rem,3vw,2.1rem);color:var(--gold);margin:.3rem 0 0}
+.hero .promise{font-family:var(--serif-sub);font-size:clamp(1.4rem,2.7vw,1.85rem);font-weight:500;margin:1.2rem auto 0;max-width:40ch;line-height:1.35}
+.hero .promise em{display:block;color:var(--earth)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero .promise em{color:var(--gold)}}
+:root[data-theme="dark"] .hero .promise em{color:var(--gold)}
+.hero-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+@keyframes rise{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+
+/* ---------- paths ---------- */
+.paths{padding-top:2rem}
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+@media (max-width:820px){.path-grid{grid-template-columns:1fr}}
+.path{position:relative;padding:2.2rem 2rem 2rem;background:var(--paper);border:1px solid var(--line);border-radius:4px}
+.path::before{content:"";position:absolute;inset:6px;border:1px solid var(--line);border-radius:2px;pointer-events:none;opacity:.7}
+.path.life{border-color:#E8DDC8}
+.path.work{border-color:#E8DDC8}
+.path .which{font-family:var(--serif-head);font-style:italic;font-weight:600;font-size:1.8rem;line-height:1;color:var(--earth)}
+.path.work .which{color:var(--pine)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .path.work .which{color:#F2B16E}}
+:root[data-theme="dark"] .path.work .which{color:#F2B16E}
+.path h3{font-family:var(--serif-sub);font-size:clamp(1.8rem,3.2vw,2.35rem);margin:.5rem 0 .2rem}
+.path p{color:var(--muted);margin:.6rem 0 1.4rem;max-width:44ch}
+.path .words{font-family:var(--serif-sub);font-style:italic;font-weight:500;color:var(--muted);font-size:1.2rem;line-height:1.45;margin:0 0 1.4rem}
+.badge{display:inline-block;font-size:.8rem;letter-spacing:.04em;padding:.2rem .6rem;border:1px solid currentColor;border-radius:20px;color:var(--earth);margin-left:.4rem;vertical-align:middle}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .badge{color:#F2B16E}}
+:root[data-theme="dark"] .badge{color:#F2B16E}
+
+/* ---------- community ---------- */
+.together{background:var(--paper);border-block:1px solid var(--line)}
+.together-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+@media (max-width:860px){.together-grid{grid-template-columns:1fr;gap:2rem}}
+.together p{max-width:58ch}
+.is-isnt{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:0}
+.together-cta{margin:1.6rem 0 0}
+@media (max-width:520px){.is-isnt{grid-template-columns:1fr}}
+.is-isnt div{padding-top:.8rem;border-top:2px solid var(--gold)}
+.is-isnt h4{font-family:var(--serif-sub);font-weight:600;font-size:1.3rem;margin:0 0 .4rem}
+.is-isnt ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.98rem}
+.ways{list-style:none;margin:0;padding:0;border-left:1px solid var(--gold)}
+.ways li{position:relative;padding:0 0 1.8rem 1.8rem}
+.ways li:last-child{padding-bottom:0}
+.ways li::before{content:"";position:absolute;left:-6px;top:.55rem;width:11px;height:11px;background:var(--gold);transform:rotate(45deg)}
+.ways h3{font-size:1.5rem}
+.ways p{margin:.3rem 0 .6rem;color:var(--muted);font-size:.98rem}
+.ways a{font-size:.95rem}
+
+/* ---------- I did a thing ---------- */
+.did{background:var(--forest);color:var(--onforest);position:relative;overflow:hidden}
+.did h2{color:#F8F4EC}
+.did .big{font-family:var(--serif-head);font-style:italic;font-size:clamp(3.2rem,9vw,6.2rem);line-height:1;color:var(--gold);margin:0}
+.did-grid>*,.together-grid>*,.book-grid>*,.about-grid>*,.path-grid>*{min-width:0}
+.did-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:3.5rem;align-items:start}
+@media (max-width:900px){.did-grid{grid-template-columns:1fr;gap:2.4rem}}
+.did p{color:#E8DDC8;max-width:48ch}
+.examples{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.6rem 0 0;padding:0;list-style:none}
+.examples li{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.12rem;padding:.35rem .8rem;border:1px solid rgba(200,157,74,.55);border-radius:20px;color:#F8F4EC}
+.card-form{background:#F8F4EC;color:#333333;border-radius:4px;padding:1.8rem;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.tabs{display:flex;gap:.3rem;border-bottom:1px solid #E8DDC8;margin-bottom:1.3rem;overflow-x:auto}
+.tabs button{flex:0 0 auto;background:none;border:0;border-bottom:2px solid transparent;padding:.6rem .8rem;font:inherit;font-size:.95rem;color:#333333;cursor:pointer;white-space:nowrap;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:#214534;border-bottom-color:#C89D4A;font-weight:500}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.92rem;margin-bottom:.3rem;color:#333333}
+.field .hint{font-size:.82rem;color:#825A38}
+.field input,.field textarea{width:100%;font:inherit;font-size:1rem;padding:.7rem .8rem;border:1px solid rgba(130,90,56,.35);border-radius:3px;background:#FFFFFF;color:#333333}
+.field textarea{min-height:120px;resize:vertical}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:#333333;margin:.4rem 0 1.2rem}
+.check input{margin-top:.35rem;accent-color:#214534}
+.card-form .btn{width:100%}
+.card-form .form-note{font-size:.82rem;color:#825A38;margin:.8rem 0 0;text-align:center}
+.sent{display:none;padding:1rem;background:#FCDEB7;border-left:3px solid #214534;font-size:.95rem;margin-top:1rem}
+.sent.show{display:block}
+
+/* ---------- book ---------- */
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) h2,:root:not([data-theme="light"]) .flow{color:var(--ink)}:root:not([data-theme="light"]) .book{background:var(--bg)}:root:not([data-theme="light"]) .descriptor{color:var(--sunset)}}
+:root[data-theme="dark"] h2,:root[data-theme="dark"] .flow{color:var(--ink)}
+:root[data-theme="dark"] .book{background:var(--bg)}
+@media (max-width:860px){.book-grid{grid-template-columns:1fr;gap:2.5rem}}
+.cover-wrap{margin:0;max-width:min(380px,72vw);margin-inline:auto;}
+.cover-img{width:100%;height:auto;border-radius:2px 5px 5px 2px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2),-6px 0 0 -2px rgba(0,0,0,.25),0 24px 44px rgba(33,69,52,.38)}
+.book-quote{font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:1.45rem;line-height:1.5;color:var(--ink);margin:1.2rem 0;padding-left:1rem;border-left:2px solid var(--gold);max-width:44ch}
+.book h2 .script{display:block;font-size:clamp(2.4rem,5vw,3.3rem);color:var(--earth);letter-spacing:0;font-family:var(--serif-head);font-style:italic;font-weight:500;margin-top:.2rem}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .book h2 .script{color:var(--gold)}}
+:root[data-theme="dark"] .book h2 .script{color:var(--gold)}
+.book p{max-width:56ch}
+.symbols{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.8rem 0;padding:1.2rem 0;border-block:1px solid var(--line)}
+@media (max-width:520px){.symbols{grid-template-columns:repeat(2,1fr)}}
+.symbols div{text-align:center}
+.symbols img{width:auto;height:72px;max-width:90px;object-fit:contain;margin:0 auto .5rem;display:block}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .symbols svg{stroke:var(--gold)}}
+:root[data-theme="dark"] .symbols svg{stroke:var(--gold)}
+.symbols b{display:block;font-family:var(--serif-sub);font-weight:600;font-size:1.25rem}
+.symbols span{font-size:.85rem;color:var(--muted)}
+.book-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
+
+.descriptor{font-family:var(--serif-body);font-size:.95rem;letter-spacing:.02em;color:var(--earth);margin:.6rem 0 0}
+.book{background:var(--cream)}
+.flow{font-family:var(--serif-head);font-weight:600;font-size:clamp(1.05rem,2vw,1.3rem);text-align:center;color:var(--forest);margin:2.2rem 0 .3rem}
+.flow span{color:var(--gold);margin:0 .25rem}
+.flow-note{text-align:center;color:var(--gold);font-weight:700;font-size:.92rem;margin:0}
+
+/* ---------- journal ---------- */
+.journal{border-top:1px solid var(--line)}
+.j-intro{display:grid;grid-template-columns:1.15fr 1fr;gap:3.5rem;margin-top:2.8rem;align-items:start}
+@media (max-width:860px){.j-intro{grid-template-columns:1fr;gap:2rem}}
+.j-intro>*{min-width:0}
+.j-letter{background:var(--paper);border:1px solid var(--line);padding:2rem 2.2rem;border-radius:4px}
+.j-letter h3,.j-close h3{font-size:1.7rem;color:var(--forest);margin-bottom:.6rem}
+.j-letter p{margin:0 0 1rem}
+.j-note{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.2rem;color:var(--earth)}
+.j-sign{font-family:var(--serif-head);font-style:italic;font-weight:600;font-size:1.5rem;color:var(--earth);margin:0}
+.j-rules{list-style:none;margin:0;padding:0;display:grid;gap:1.3rem}
+.j-rules li{padding-left:1.2rem;border-left:2px solid var(--gold);color:var(--muted);font-size:.95rem}
+.j-rules b{display:block;font-family:var(--serif-head);font-weight:600;font-size:1.35rem;color:var(--ink)}
+.j-tools{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:3.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line)}
+.j-threads{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.j-label{font-family:var(--serif-head);font-weight:600;font-size:1.2rem;margin-right:.4rem}
+.thread{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-size:.85rem;padding:.35rem .8rem .35rem .55rem;border:1px solid var(--line);border-radius:30px;background:var(--paper);color:var(--ink);cursor:pointer}
+.thread[data-t="0"]{padding-left:.9rem}
+.thread img{width:24px;height:24px;object-fit:contain}
+.thread.on{border-color:var(--forest);background:var(--forest);color:var(--cream)}
+.j-parts{display:flex;gap:.3rem;margin-top:1.8rem;overflow-x:auto;border-bottom:1px solid var(--line)}
+.j-parts button{flex:0 0 auto;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:.7rem 1rem;font-family:var(--serif-head);font-size:1.15rem;font-weight:600;color:var(--muted);cursor:pointer;text-align:left;line-height:1.2}
+.j-parts button:disabled{opacity:.4;cursor:default}
+.j-parts button small{display:block;font-family:var(--serif-body);font-weight:400;font-size:.72rem;letter-spacing:.04em;color:var(--earth)}
+.j-parts button[aria-selected="true"]{color:var(--forest);border-bottom-color:var(--gold)}
+.j-part-intro{max-width:62ch;margin:1.8rem 0 2rem}
+.j-part-intro p{font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:1.35rem;line-height:1.45;margin:0 0 .5rem}
+.j-part-intro .tagline{font-family:var(--serif-body);font-style:normal;font-size:.95rem;color:var(--earth);font-weight:700}
+.j-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+@media (max-width:760px){.j-grid{grid-template-columns:1fr}}
+.prompt{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:1.4rem 1.5rem;display:grid;grid-template-columns:auto 1fr;column-gap:1rem}
+.prompt .num{font-family:var(--serif-head);font-weight:600;font-size:1.6rem;color:var(--gold);line-height:1}
+.prompt .icons{display:flex;gap:.3rem;margin-top:.5rem}
+.prompt .icons img{width:26px;height:26px;object-fit:contain}
+.prompt q{quotes:none;display:block;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.32rem;line-height:1.3;color:var(--ink)}
+.prompt p{margin:.5rem 0 0;font-size:.9rem;color:var(--muted)}
+.j-empty{color:var(--muted);font-style:italic;margin:1rem 0}
+.j-pick{margin-top:1.6rem;background:color-mix(in srgb,var(--parchment) 45%,var(--cream));border:1px solid var(--gold);border-radius:4px;padding:1.6rem 1.8rem}
+.j-pick .from{font-size:.82rem;color:var(--earth);margin:0 0 .4rem}
+.j-pick q{quotes:none;display:block;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.65rem;line-height:1.25}
+.j-pick p{margin:.5rem 0 0;color:var(--muted)}
+.j-close{max-width:640px;margin:4rem auto 0;text-align:center;padding-top:2rem;border-top:1px solid var(--gold)}
+.j-close p{margin:0 0 1rem}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .j-letter h3,:root:not([data-theme="light"]) .j-close h3,:root:not([data-theme="light"]) .j-parts button[aria-selected="true"]{color:var(--ink)}:root:not([data-theme="light"]) .j-pick{background:var(--paper)}:root:not([data-theme="light"]) .thread.on{background:var(--gold);color:var(--pine);border-color:var(--gold)}}
+:root[data-theme="dark"] .j-letter h3,:root[data-theme="dark"] .j-close h3,:root[data-theme="dark"] .j-parts button[aria-selected="true"]{color:var(--ink)}
+:root[data-theme="dark"] .j-pick{background:var(--paper)}
+:root[data-theme="dark"] .thread.on{background:var(--gold);color:var(--pine);border-color:var(--gold)}
+
+.notice{margin-top:1.8rem;padding:1.2rem 1.4rem;background:color-mix(in srgb,var(--parchment) 40%,var(--cream));border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:3px}
+.notice h4{font-family:var(--serif-head);font-weight:600;font-size:1.35rem;margin:0 0 .3rem}
+.notice p{margin:0;font-size:.95rem}
+.did-cta{margin:1.6rem 0 0}
+.gc-option{padding:1.2rem 0;border-top:1px solid #E8DDC8}
+.gc-option h4{font-family:var(--serif-head);font-weight:600;font-size:1.35rem;color:#214534;margin:0 0 .3rem}
+.gc-option p{font-size:.92rem;color:#333333!important;margin:0 0 .9rem!important;max-width:none!important}
+.btn-line-dark{border-color:#214534;color:#214534!important;background:transparent}
+.btn-line-dark:hover{background:#214534;color:#F8F4EC!important}
+.cf-title{font-family:var(--serif-head);font-weight:600;font-size:1.55rem;color:#214534;margin:0}
+.cf-sub{font-size:.88rem;color:#333333!important;margin:.3rem 0 1rem!important;max-width:none!important}
+.prompt.locked{background:transparent;border-style:dashed;border-color:var(--gold)}
+.prompt.locked q{font-weight:500;color:var(--earth)}
+.j-buy{margin:3.5rem auto 0;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding:2rem 2.2rem;background:color-mix(in srgb,var(--parchment) 45%,var(--cream));border:1px solid var(--gold);border-radius:4px}
+.j-buy h3{font-size:1.9rem;color:var(--forest)}
+.j-buy p{margin:.4rem 0 0;max-width:56ch}
+.j-buy-cta{display:flex;gap:.8rem;flex-wrap:wrap}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .notice,:root:not([data-theme="light"]) .j-buy{background:var(--paper)}:root:not([data-theme="light"]) .j-buy h3{color:var(--ink)}}
+:root[data-theme="dark"] .notice,:root[data-theme="dark"] .j-buy{background:var(--paper)}
+:root[data-theme="dark"] .j-buy h3{color:var(--ink)}
+
+/* ---------- book hero ---------- */
+.book-hero{position:relative;overflow:hidden;padding:4rem 0 5rem;background:
+  radial-gradient(60% 70% at 78% 45%, color-mix(in srgb,var(--sunset) 38%,transparent) 0%, transparent 70%),
+  linear-gradient(180deg, color-mix(in srgb,var(--parchment) 35%,var(--cream)) 0%, var(--cream) 100%)}
+.bh-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+.bh-grid>*{min-width:0}
+.bh-kicker{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.3rem;color:var(--earth);margin:0 0 .6rem}
+.bh-text h1{font-family:var(--serif-head);font-weight:600;font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.98;letter-spacing:-.005em;color:var(--forest)}
+.bh-text h1 em{display:block;font-style:italic;font-weight:500;color:var(--espresso)}
+.bh-desc{font-size:1rem;letter-spacing:.03em;color:var(--earth);margin:1.1rem 0 0;font-weight:700}
+.bh-quote{font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:clamp(1.4rem,2.4vw,1.75rem);line-height:1.35;margin:1.6rem 0 0;padding-left:1.1rem;border-left:2px solid var(--gold);max-width:36ch}
+.bh-body{margin:1.3rem 0 0;max-width:50ch}
+.bh-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.btn-lg{padding:1rem 1.8rem;font-size:1.02rem}
+.bh-note{font-size:.85rem;color:var(--earth);margin:.8rem 0 0}
+.bh-cover{margin:0;justify-self:center;width:min(430px,100%)}
+.bh-cover .cover-img{width:100%;height:auto;border-radius:2px 6px 6px 2px;box-shadow:-6px 0 0 -2px rgba(52,37,19,.35),0 30px 60px rgba(52,37,19,.35),0 8px 18px rgba(52,37,19,.2)}
+@media (max-width:860px){
+  .bh-grid{grid-template-columns:1fr;gap:2.4rem}
+  .bh-cover{order:-1;width:min(300px,78vw)}
+  .bh-text{text-align:center}
+  .bh-quote{margin-inline:auto;border-left:0;padding-left:0;border-top:1px solid var(--gold);padding-top:1rem}
+  .bh-body{margin-inline:auto}
+  .bh-cta{justify-content:center}
+}
+.nav-cta{background:var(--forest);color:var(--cream)!important;padding:.45rem 1rem;border-radius:3px}
+.nav-cta:hover{background:var(--pine)}
+@media (max-width:860px){.nav-cta{display:inline-block!important;margin-top:.6rem;border-bottom:0!important}}
+/* inside the book */
+.book-intro{max-width:60ch;margin:1rem auto 0}
+.book .center p{margin-inline:auto}
+.book .center .lede{max-width:none}
+.paths4{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+@media (max-width:860px){.paths4{grid-template-columns:1fr 1fr}}
+.paths4 li{text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:1.8rem 1.2rem 1.6rem}
+.paths4 img{height:110px;width:auto;max-width:130px;object-fit:contain;margin:0 auto 1rem}
+.paths4 h3{font-size:1.6rem;color:var(--forest)}
+.paths4 b{display:block;font-size:.85rem;letter-spacing:.03em;color:var(--earth);margin-top:.2rem}
+.paths4 span{display:block;font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:1.15rem;color:var(--muted);margin-top:.5rem}
+.extras{display:grid;grid-template-columns:repeat(2,1fr);gap:2.4rem;margin-top:3.5rem;padding-top:2.4rem;border-top:1px solid var(--line)}
+@media (max-width:760px){.extras{grid-template-columns:1fr;gap:1.6rem}}
+.extras h3{font-size:1.5rem;color:var(--forest)}
+.extras p{margin:.4rem 0 0;font-size:.95rem;color:var(--muted)}
+.book-close{text-align:center;margin-top:3.5rem}
+.bc-line{font-family:var(--serif-head);font-weight:600;font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--forest);margin:0 0 1.2rem}
+/* FIO intro (second fold) */
+.fio-intro{border-top:1px solid var(--line);padding:4.5rem 0 3rem}
+.fio-intro .hero-logo{width:clamp(130px,16vw,180px);animation:none}
+.fio-title{font-family:var(--serif-head);font-size:clamp(2rem,5.4vw,3.6rem);letter-spacing:.04em;color:var(--forest);font-weight:700}
+.fio-title sup{font-size:.3em;vertical-align:super}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .book-hero{background:var(--bg)}:root:not([data-theme="light"]) .bh-text h1,:root:not([data-theme="light"]) .bh-text h1 em,:root:not([data-theme="light"]) .paths4 h3,:root:not([data-theme="light"]) .extras h3,:root:not([data-theme="light"]) .bc-line,:root:not([data-theme="light"]) .fio-title{color:var(--ink)}:root:not([data-theme="light"]) .bh-kicker,:root:not([data-theme="light"]) .bh-desc{color:var(--sunset)}}
+:root[data-theme="dark"] .book-hero{background:var(--bg)}
+:root[data-theme="dark"] .bh-text h1,:root[data-theme="dark"] .bh-text h1 em,:root[data-theme="dark"] .paths4 h3,:root[data-theme="dark"] .extras h3,:root[data-theme="dark"] .bc-line,:root[data-theme="dark"] .fio-title{color:var(--ink)}
+/* ---------- philosophy ---------- */
+.philo{background:var(--paper);border-block:1px solid var(--line)}
+.steps{list-style:none;counter-reset:s;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
+.steps::before{content:"";position:absolute;top:22px;left:7%;right:7%;height:1px;background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 12px)}
+.steps li{counter-increment:s;text-align:center;padding:0 .5rem;position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;margin:0 auto .9rem;border-radius:50%;background:var(--bg);border:1px solid var(--gold);font-family:var(--serif-head);color:var(--earth);position:relative}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .steps li::before{color:var(--gold)}}
+:root[data-theme="dark"] .steps li::before{color:var(--gold)}
+.steps b{display:block;font-family:var(--serif-sub);font-weight:600;font-size:1.22rem;line-height:1.25}
+.steps span{display:block;font-size:.85rem;color:var(--muted);margin-top:.35rem;line-height:1.5}
+@media (max-width:900px){
+  .steps{grid-template-columns:1fr;gap:1.3rem;max-width:520px;margin-inline:auto}
+  .steps::before{top:0;bottom:0;left:21px;right:auto;width:1px;height:auto;background:repeating-linear-gradient(180deg,var(--gold) 0 6px,transparent 6px 12px)}
+  .steps li{display:grid;grid-template-columns:44px 1fr;column-gap:1rem;text-align:left;padding:0}
+  .steps li::before{margin:0;grid-row:span 2}
+  .steps span{margin-top:.15rem}
+}
+.motto{font-family:var(--serif-head);font-weight:600;text-align:center;letter-spacing:.01em;font-size:clamp(1.3rem,2.6vw,1.65rem);line-height:1.45;margin:3.5rem auto 0;max-width:46ch;padding:1.2rem 1.5rem;border-block:1px solid var(--gold);color:var(--forest)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .motto{color:var(--ink)}}
+:root[data-theme="dark"] .motto{color:var(--ink)}
+
+/* ---------- values ---------- */
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem 2.8rem;margin-top:3rem}
+@media (max-width:820px){.values{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.values{grid-template-columns:1fr}}
+.value{display:grid;grid-template-columns:52px 1fr;gap:1rem;align-items:start}
+.value svg{width:52px;height:52px;stroke:var(--forest);fill:none;stroke-width:1.3}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .value svg{stroke:var(--gold)}}
+:root[data-theme="dark"] .value svg{stroke:var(--gold)}
+.value h3{font-size:1.5rem}
+.value em{display:block;font-family:var(--serif-sub);font-weight:600;color:var(--earth);font-size:1.12rem}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .value em{color:var(--gold)}}
+:root[data-theme="dark"] .value em{color:var(--gold)}
+.value p{margin:.35rem 0 0;font-size:.95rem;color:var(--muted)}
+
+/* ---------- about ---------- */
+.about{background:var(--paper);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:center}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+.about-art{position:relative}
+.about-art img{border-radius:4px;mix-blend-mode:multiply;width:100%}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .about-art img{mix-blend-mode:normal;opacity:.9}}
+:root[data-theme="dark"] .about-art img{mix-blend-mode:normal;opacity:.9}
+.about .hi{font-family:var(--serif-head);font-style:italic;font-size:2.2rem;color:var(--earth);line-height:1}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .about .hi{color:var(--gold)}}
+:root[data-theme="dark"] .about .hi{color:var(--gold)}
+.about h2{font-family:var(--serif-sub);font-weight:500;letter-spacing:0;font-size:clamp(1.6rem,3vw,2.2rem);margin:.6rem 0 1rem}
+.about p{max-width:58ch}
+.sign{font-family:var(--serif-head);font-style:italic;font-size:1.7rem;color:var(--earth);margin-top:1rem}
+
+/* ---------- in the works ---------- */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.6rem}
+@media (max-width:900px){.works{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.works{grid-template-columns:1fr}}
+.idea{padding:1.4rem 1.3rem;border:1px solid var(--beige);background:var(--paper);border-radius:4px}
+.idea h3{font-size:1.4rem}
+.idea p{font-size:.93rem;color:var(--muted);margin:.5rem 0 0}
+.idea small{display:block;margin-top:.9rem;font-size:.8rem;color:var(--earth);letter-spacing:.03em}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .idea small{color:var(--gold)}}
+:root[data-theme="dark"] .idea small{color:var(--gold)}
+
+/* ---------- footer ---------- */
+footer{background:var(--forest);color:#E8DDC8;padding:3.5rem 0 2rem;font-size:.95rem}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr}}
+footer .brand{color:#F8F4EC}
+footer .brand img{width:56px}
+footer .tag{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.2rem;color:var(--gold);margin:.4rem 0 0}
+footer h4{font-family:var(--serif-head);font-weight:600;letter-spacing:.06em;color:#F8F4EC;font-size:1.2rem;margin:0 0 .8rem}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:.35rem 0}
+footer a{color:#E8DDC8}
+footer a:hover{color:var(--gold)}
+.care{margin-top:2.6rem;padding:1rem 1.2rem;border:1px solid rgba(200,157,74,.4);border-radius:3px;font-size:.88rem;color:#E8DDC8;max-width:780px}
+.copy{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:#E8DDC8}
+.copy .script{font-size:1.5rem;color:var(--gold)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body id="top">
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top"><img src="assets/logo-sm.webp" alt="" width="42" height="43"><b>FIGURING IT OUT<sup>™</sup></b></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#book">The Book</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#together">Community</a></li>
+        <li><a href="#did">I Did a Thing</a></li>
+        <li><a href="#about">About Jenn</a></li>
+        <li><a class="nav-cta" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Get the book</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- BOOK HERO -->
+<section class="book-hero" aria-labelledby="bh-h">
+  <div class="wrap bh-grid">
+    <div class="bh-text">
+      <p class="bh-kicker">A new book by Jenn Kassan</p>
+      <h1 id="bh-h">Chasing Chaos, <em>Finding Home</em></h1>
+      <p class="bh-desc">A Collection of Memories, Poems, and Stories</p>
+      <p class="bh-quote">Some journeys don't begin with a destination. They begin with a memory.</p>
+      <p class="bh-body">Memories, poems, and stories about losing my mother at three years old, and the long, winding path from chaos to home: through grief, motherhood, and finally understanding my own mind.</p>
+      <div class="bh-cta">
+        <a class="btn btn-forest btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn btn-line btn-lg" href="#book">Look inside</a>
+      </div>
+    </div>
+    <figure class="bh-cover"><img class="cover-img" src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home by Jenn Kassan: a campsite at sunset with an RV by a lake, a campfire, a Figuring It Out journal, and a stack of books labeled Courage, Grace, Growth, Gratitude" width="640" height="910" fetchpriority="high"></figure>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book" aria-labelledby="book-h">
+  <div class="wrap">
+    <div class="center">
+      <h2 id="book-h">Inside the Book</h2>
+      <p class="lede">Written the way life actually happens. Not in a straight line.</p>
+      <p class="book-intro">Read it front to back, or follow one of four reading paths. Each story is marked with the symbols it belongs to, so you can follow whichever part of the story is calling you today.</p>
+    </div>
+    <ul class="paths4" aria-label="Four reading paths">
+      <li><img src="assets/sym-brain.webp" alt="" width="200" height="180"><h3>The Brain</h3><b>Grief &amp; Memory</b><span>Loss, memory, and what we carry.</span></li>
+      <li><img src="assets/sym-rose.webp" alt="" width="200" height="200"><h3>The Flower</h3><b>Motherhood &amp; Becoming</b><span>Mother, daughter, still becoming.</span></li>
+      <li><img src="assets/sym-tornado.webp" alt="" width="200" height="200"><h3>The Tornado</h3><b>Chaos &amp; Clarity</b><span>Questions, understanding, finding the why.</span></li>
+      <li><img src="assets/sym-heart.webp" alt="" width="200" height="200"><h3>The Heart</h3><b>Love &amp; Imperfection</b><span>Family, forgiveness, loving anyway.</span></li>
+    </ul>
+    <div class="extras">
+      <div><h3>A song index</h3><p>The music woven through the stories, gathered in one place so you can listen along.</p></div>
+      <div><h3>A journal companion</h3><p><em>Finding Home in the Chaos</em> gives you room to write your own story alongside mine. <a href="#journal">Preview it below</a>.</p></div>
+    </div>
+    <div class="book-close">
+      <a class="btn btn-forest btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL COMPANION -->
+<section class="journal" id="journal" aria-labelledby="journal-h">
+  <div class="wrap">
+    <div class="center">
+      <h2 id="journal-h">Finding Home in the Chaos</h2>
+      <p class="lede">A reflective journal companion to <em>Chasing Chaos, Finding Home</em>. Try a few prompts here.</p>
+    </div>
+
+    <div class="j-intro">
+      <div class="j-letter">
+        <h3>Begin here</h3>
+        <p>I am not here because I have it all figured out. I do not. I am still sifting through the random thoughts, the memories that show up out of nowhere, and the parts of my story I am still trying to understand.</p>
+        <p>Think of these pages like an hourglass. Dump the messy stuff in. The questions. The people. The moments you cannot stop replaying. Then sit with what slowly rises to the top. Maybe it is clarity. Maybe it is just one honest sentence. That counts, too.</p>
+        <p class="j-note">This is not therapy. It is just a place to be real, imperfect, and a little less alone.</p>
+        <p class="j-sign">Jenn</p>
+      </div>
+      <ul class="j-rules" aria-label="There is no wrong place to start">
+        <li><b>Follow the feeling</b>Choose the prompt that feels most alive, even if it surprises you.</li>
+        <li><b>Give yourself permission</b>Write one sentence, fill the page, skip a question, or come back later.</li>
+        <li><b>Let it be unfinished</b>Not every memory needs a lesson. Not every feeling needs a solution.</li>
+        <li><b>Make it yours</b>Photographs, ticket stubs, prayers, lists, doodles, or blank space. It all belongs.</li>
+      </ul>
+    </div>
+
+    <div class="j-tools">
+      <div class="j-threads" role="group" aria-label="Follow a thread">
+        <span class="j-label">Follow a thread</span>
+        <button type="button" class="thread on" data-t="0" aria-pressed="true">All</button>
+        <button type="button" class="thread" data-t="1" aria-pressed="false"><img src="assets/sym-brain.webp" alt="">Grief &amp; Memory</button>
+        <button type="button" class="thread" data-t="2" aria-pressed="false"><img src="assets/sym-rose.webp" alt="">Motherhood &amp; Becoming</button>
+        <button type="button" class="thread" data-t="3" aria-pressed="false"><img src="assets/sym-tornado.webp" alt="">Chaos &amp; Clarity</button>
+        <button type="button" class="thread" data-t="4" aria-pressed="false"><img src="assets/sym-heart.webp" alt="">Love &amp; Imperfection</button>
+      </div>
+      <button type="button" class="btn btn-line j-random" id="j-random">Choose a sample prompt for me</button>
+    </div>
+    <div class="j-pick" id="j-pick" aria-live="polite" hidden></div>
+
+    <div class="j-parts" role="tablist" aria-label="Journal parts" id="j-tabs"></div>
+    <div class="j-part" id="j-part"></div>
+
+    <div class="j-buy" id="j-buy">
+      <div>
+        <h3>Want the whole journal?</h3>
+        <p>Forty prompts across four parts, room to write, and the four threads that tie it to <em>Chasing Chaos, Finding Home</em>. What you see here is a small sample. Journal requests do get a reply.</p>
+      </div>
+      <div class="j-buy-cta">
+        <a class="btn btn-forest" href="mailto:jennkassan.fio@gmail.com?subject=Book%20%26%20journal%20interest&amp;body=I%27m%20interested%20in%3A%20the%20journal%0A%0AName%3A%0ABest%20way%20to%20reach%20me%3A">I want the journal</a>
+        <a class="btn btn-line community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Follow for release news</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIGURING IT OUT INTRO -->
+<section class="hero fio-intro" id="fio" aria-labelledby="fio-h">
+  <img class="decor leaves" src="assets/leaves.webp" alt="">
+  <img class="decor hills" src="assets/hills.webp" alt="">
+  <div class="wrap">
+    <img class="hero-logo" src="assets/logo.webp" alt="Figuring It Out logo: a compass and hourglass above an open book, with leaves and a winding path" width="250" height="259">
+    <h2 class="fio-title" id="fio-h">FIGURING IT OUT<sup>™</sup></h2>
+    <p class="tag">Finding Clarity in the Chaos</p>
+    <div class="rule" aria-hidden="true"><span></span></div>
+    <p class="promise">Life doesn't ask us to have all the answers. <em>It asks us to keep moving anyway.</em></p>
+    <div class="hero-cta">
+      <a class="btn btn-forest" href="#together">Join the community</a>
+      <a class="btn btn-line" href="#did">Share an "I did a thing"</a>
+    </div>
+  </div>
+</section>
+
+<!-- TWO PATHS -->
+<section class="paths" aria-labelledby="paths-h">
+  <div class="wrap">
+    <div class="center">
+      <h2 id="paths-h">One brand. One story.</h2>
+      <p class="lede">There isn't one right path. Only the one that's right for you.</p>
+    </div>
+    <div class="path-grid">
+      <article class="path life">
+        <div class="which">Personal</div>
+        <h3>Stories, Community &amp; Growth</h3>
+        <p>Stories and reflections from a life spent figuring things out, and a place to share your own small steps forward.</p>
+        <p class="words">Fear, questions, grief, change. And then hope, perspective, confidence, home.</p>
+        <a class="btn btn-forest" href="#together">Join the conversation</a>
+      </article>
+      <article class="path work">
+        <div class="which">Professional</div>
+        <h3>Something for Oncology Data Specialists <span class="badge">Stay tuned</span></h3>
+        <p>Thirty years in cancer registry taught me a lot about turning complexity into clarity. I'm building something to share that with my fellow ODS professionals. It isn't ready yet.</p>
+        <p class="words">Follow along and you'll hear about it first.</p>
+        <a class="btn btn-pine" href="https://www.facebook.com/profile.php?id=61594271400499" target="_blank" rel="noopener">Follow for updates</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="together" id="together" aria-labelledby="together-h">
+  <div class="wrap together-grid">
+    <div>
+      <h2 id="together-h">Nobody Should Have to Figure It Out Alone</h2>
+      <p class="lede">A place to ask, to share, and to keep moving together.</p>
+      <p>This started on Facebook with a simple idea: most of us make our biggest decisions while we're still uncertain. It helps to know you're not the only one. The conversation lives in the Figuring It Out Facebook group, where you can ask for a nudge, answer someone else's question, cheer each other on, or share the thing you finally did.</p>
+      <p class="together-cta"><a class="btn btn-forest community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Join the Facebook group</a></p>
+    </div>
+    <div>
+      <div class="is-isnt">
+        <div>
+          <h4>What this is</h4>
+          <ul>
+            <li>Encouragement from real people</li>
+            <li>Stories, lessons, and perspective</li>
+            <li>A place to celebrate small wins</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What it isn't</h4>
+          <ul>
+            <li>Therapy or professional counseling</li>
+            <li>Medical, legal, or financial advice</li>
+            <li>Crisis support (see the note at the bottom)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="notice">
+        <h4>How this space works</h4>
+        <p>This website is a place for information, reflection, and sharing. I read what I can, but I'm not able to monitor it or reply to messages on a regular basis. The Facebook group is where people respond to each other, so that's the best place to ask, answer, and encourage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- I DID A THING -->
+<section class="did" id="did" aria-labelledby="did-h">
+  <div class="wrap did-grid">
+    <div>
+      <p class="big" aria-hidden="true">I did a thing.</p>
+      <h2 id="did-h">Every Step Counts</h2>
+      <p>Moving forward is what builds confidence. Not the giant leaps, the small, ordinary, hard-won steps. Post yours in the Figuring It Out Facebook group, where others can cheer you on, and take a minute to cheer for someone else.</p>
+      <ul class="examples" aria-label="Examples">
+        <li>I made the appointment</li>
+        <li>I asked for help</li>
+        <li>I finished the chapter</li>
+        <li>I said no</li>
+        <li>I started over</li>
+        <li>I went for the walk</li>
+        <li>I published my own music</li>
+        <li>I went back to school</li>
+        <li>I set a boundary</li>
+        <li>I told my story</li>
+        <li>I took the trip</li>
+        <li>I forgave myself</li>
+        <li>I tried something new</li>
+        <li>I spoke up</li>
+      </ul>
+    </div>
+
+    <div class="card-form group-card">
+      <h3 class="cf-title">Post it in the group</h3>
+      <p class="cf-sub">The Figuring It Out Facebook group is where people share their wins and questions and answer each other.</p>
+      <div class="gc-option">
+        <h4>Share your "I did a thing"</h4>
+        <p>Start your post with "I did a thing" so others can find it and cheer you on.</p>
+        <a class="btn btn-forest community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Post your win in the group</a>
+      </div>
+      <div class="gc-option">
+        <h4>Ask a question</h4>
+        <p>Stuck on a decision, a change, or a next step? Ask the group. Someone has probably been where you are.</p>
+        <a class="btn btn-line-dark community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Ask in the group</a>
+      </div>
+      <p class="form-note">You'll need a Facebook account. If you're new, Facebook will ask you to join the group first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philo" id="philosophy" aria-labelledby="philo-h">
+  <div class="wrap">
+    <div class="center">
+      <h2 id="philo-h">How I Figure Things Out</h2>
+      <p class="lede">Not a formula I learned. A practice I found by looking back.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Question everything</b><span>Questions become the starting point.</span></li>
+      <li><b>Look closer</b><span>Get curious instead of staying frustrated.</span></li>
+      <li><b>Make sense of the pieces</b><span>Patterns appear. Dots connect.</span></li>
+      <li><b>Apply what you learn</b><span>Some things work. Some don't. Both teach.</span></li>
+      <li><b>Build confidence through action</b><span>Every small win is proof.</span></li>
+      <li><b>Keep moving through it</b><span>Progress isn't always visible.</span></li>
+      <li><b>Share what you know</b><span>Because you remember being lost.</span></li>
+    </ol>
+    <p class="motto">You don't move because you've figured it out. You figure it out because you choose to keep moving.</p>
+    <p class="flow">Questions <span aria-hidden="true">→</span> Curiosity <span aria-hidden="true">→</span> Learning <span aria-hidden="true">→</span> Understanding <span aria-hidden="true">→</span> Growth <span aria-hidden="true">→</span> Keep Moving</p>
+    <p class="flow-note">Movement provokes more questions.</p>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section aria-labelledby="values-h">
+  <div class="wrap">
+    <div class="center">
+      <h2 id="values-h">What Guides Me</h2>
+      <p class="lede">The beliefs behind every step.</p>
+    </div>
+    <div class="values">
+      <div class="value"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="20"/><path d="M26 8l4 18-4 18-4-18z"/><path d="M8 26l18-4 18 4-18 4z"/></svg><div><h3>Curiosity</h3><em>We ask questions.</em><p>Every answer starts with a question, so we stay curious and challenge assumptions.</p></div></div>
+      <div class="value"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M8 14c6-2 12-2 18 2v24c-6-4-12-4-18-2zM44 14c-6-2-12-2-18 2v24c6-4 12-4 18-2z"/></svg><div><h3>Clarity</h3><em>We seek understanding.</em><p>We cut through complexity to find what matters and turn uncertainty into action.</p></div></div>
+      <div class="value"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="18" cy="19" r="5"/><circle cx="34" cy="19" r="5"/><path d="M9 38c0-7 4-11 9-11s9 4 9 11M25 38c0-7 4-11 9-11s9 4 9 11"/></svg><div><h3>Connection</h3><em>We lift each other up.</em><p>We make space for support and trust, because no one should figure it out alone.</p></div></div>
+      <div class="value"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M26 44V22M26 30c-8 0-12-5-12-12 8 0 12 5 12 12zM26 26c0-7 4-12 12-12 0 7-4 12-12 12z"/></svg><div><h3>Growth</h3><em>We keep learning.</em><p>Growth happens with every step forward, not while we wait to feel ready.</p></div></div>
+      <div class="value"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M6 40l14-20 8 10 6-8 12 18z"/><path d="M17 25l3 3 3-3"/></svg><div><h3>Courage</h3><em>We move forward anyway.</em><p>We choose action over fear and keep going when it's uncertain.</p></div></div>
+      <div class="value"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M26 42S10 32 10 21a8 8 0 0 1 16-3 8 8 0 0 1 16 3c0 11-16 21-16 21z"/></svg><div><h3>Integrity</h3><em>We do what's right.</em><p>Honesty, kindness, and respect in every decision and every conversation.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div class="about-art"><img src="assets/mug.webp" alt="A coffee mug with the Figuring It Out hourglass beside a journal that reads Keep Moving" width="319" height="210"></div>
+    <div>
+      <div class="hi">Hi, I'm Jenn.</div>
+      <h2 id="about-h">I've spent much of my life figuring it out.</h2>
+      <p>I'm the author of <em>Chasing Chaos, Finding Home</em>. For more than thirty years I've worked in cancer registry, turning scattered information into clear, trustworthy records. Somewhere along the way I realized the same process applies to people, and to life: question, look closer, make sense of the pieces, and keep moving.</p>
+      <p>I don't have all the answers. I just keep figuring it out. And I believe you can too.</p>
+      <div class="sign">Let's figure it out together.</div>
+    </div>
+  </div>
+</section>
+
+<!-- IN THE WORKS -->
+<section id="works" aria-labelledby="works-h">
+  <div class="wrap">
+    <div class="center">
+      <h2 id="works-h">In the Works</h2>
+      <p class="lede">Ideas taking shape. Tell me which you'd use first.</p>
+    </div>
+    <div class="works">
+      <div class="idea"><h3>Field Notes</h3><p>Short reflections and stories, a little more room than a Facebook post allows.</p><small>Coming soon</small></div>
+      <div class="idea"><h3>The "I Did a Thing" Wall</h3><p>A shared collection of the wins you send in, for the days you need a reminder.</p><small>Collecting stories now</small></div>
+      <div class="idea"><h3>For Oncology Data Specialists</h3><p>Professional resources from thirty years in cancer registry. Not ready for the world yet.</p><small>Stay tuned</small></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><img src="assets/logo-sm.webp" alt="" width="56" height="58"><b>FIGURING IT OUT<sup>™</sup></b></a>
+        <p class="tag">Finding Clarity in the Chaos</p>
+        <p style="margin-top:1rem;max-width:36ch">Stories, community, and small steps forward.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#together">Community</a></li>
+          <li><a href="#did">I Did a Thing</a></li>
+          <li><a href="#book">The Book</a></li>
+          <li><a href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Get the book</a></li>
+          <li><a href="#journal">Journal Companion</a></li>
+          <li><a href="#about">About Jenn</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay Connected</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Community group</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61594271400499" target="_blank" rel="noopener">Facebook page</a></li>
+          <li><a href="mailto:jennkassan.fio@gmail.com">jennkassan.fio@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="care"><strong style="color:#F8F4EC">A note of care.</strong> This is a community for encouragement and shared stories, not professional or emergency support, and messages sent through this site aren't monitored regularly. If you're in crisis or thinking about harming yourself, please call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline, US) or call <strong>911</strong>. Outside the US, contact your local emergency number.</p>
+    <div class="copy">
+      <span>© <span id="yr">2026</span> Figuring It Out™ · Jenn Kassan. All rights reserved.</span>
+      <span class="script">Just keep moving.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ====== EDIT HERE ======
+  var EMAIL = "jennkassan.fio@gmail.com";
+  // =======================
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function(e){ if(e.target.tagName==='A'){ nav.classList.remove('open'); btn.setAttribute('aria-expanded', false);} });
+
+  // ====== Journal companion ======
+  var J = [{"part": "Part One", "title": "What We Carry", "intro": "I am not going to tell you what your story means. I am still trying to make sense of mine. But maybe putting the pieces on the page helps us see what we have been carrying.", "tag": "You do not have to make sense of it yet.", "total": 10, "tt": {"1": 8, "2": 0, "3": 0, "4": 5}, "prompts": [{"n": "01", "t": [1], "q": "What memory still feels like it lives in your body?", "s": "Begin with a place, a smell, a sound, or a moment that arrives before you ask it to."}, {"n": "09", "t": [4], "q": "What ordinary moment do you never want to forget?", "s": "Describe it as if you could place it safely in someone else's hands."}]}, {"part": "Part Two", "title": "Who We Are Becoming", "intro": "Becoming is not some pretty before and after picture. It is the in-between. It is getting it wrong, learning something anyway, and realizing you are not the same person you were when you started.", "tag": "I am still becoming, too.", "total": 10, "tt": {"1": 0, "2": 7, "3": 1, "4": 4}, "prompts": [{"n": "04", "t": [2, 3], "q": "What did you think your life would look like by now?", "s": "What is different? What is better than you expected? What is still hard to accept?"}, {"n": "10", "t": [2], "q": "What would you tell the version of you who thought she had to have it all figured out by now?", "s": "Give her the truth. Give her a little grace, too."}]}, {"part": "Part Three", "title": "The Messy Middle", "intro": "This is the part nobody puts in the highlight reel. The waiting. The detours. The questions that do not have a clean answer. I have spent a lot of time here. Maybe you have, too.", "tag": "The middle is still part of the story.", "total": 10, "tt": {"1": 0, "2": 0, "3": 8, "4": 2}, "prompts": [{"n": "01", "t": [3], "q": "What does chaos look like in your life right now?", "s": "No need to make it sound pretty. Just put it on the page."}, {"n": "10", "t": [3], "q": "What is one tiny thing you can do from right where you are?", "s": "Not a five-year plan. Just the next small thing that helps you keep moving."}]}, {"part": "Part Four", "title": "Finding Home", "intro": "I used to think home was a place you got to when the hard part was over. Now I think it can be a person, a memory, a deep breath, or the moment you realize you are finally being honest with yourself. Maybe home is not something we find once. Maybe we keep finding our way back to it.", "tag": "You are allowed to call yourself home.", "total": 10, "tt": {"1": 1, "2": 3, "3": 2, "4": 5}, "prompts": [{"n": "01", "t": [4], "q": "When you hear the word home, what comes to mind first?", "s": "Do not overthink it. A person, a place, a smell, a song, a feeling—it all counts."}, {"n": "07", "t": [2], "q": "What little ritual makes life feel steady?", "s": "Coffee on the porch. A song in the car. Calling somebody. The small things are not small when they help us come back to ourselves."}]}];
+  var ICON = {1:"assets/sym-brain.webp",2:"assets/sym-rose.webp",3:"assets/sym-tornado.webp",4:"assets/sym-heart.webp"};
+  var NAME = {1:"Grief & Memory",2:"Motherhood & Becoming",3:"Chaos & Clarity",4:"Love & Imperfection"};
+  var jPart = 0, jThread = 0;
+  var COMMUNITY = "https://www.facebook.com/share/g/17vJJT11QF/";
+  document.querySelectorAll('.community-link').forEach(function(a){ a.href = COMMUNITY; });
+  var tabsEl = document.getElementById('j-tabs'), partEl = document.getElementById('j-part'), pickEl = document.getElementById('j-pick');
+  function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+  function icons(ts){ return ts.map(function(t){ return '<img src="'+ICON[t]+'" alt="'+esc(NAME[t])+'" title="'+esc(NAME[t])+'">'; }).join(''); }
+  J.forEach(function(p,i){
+    var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab');
+    b.innerHTML='<small>'+esc(p.part)+' <span class="ct"></span></small>'+esc(p.title);
+    b.addEventListener('click',function(){ jPart=i; renderJ(); });
+    tabsEl.appendChild(b);
+  });
+  function countIn(p){ return p.prompts.filter(function(q){ return !jThread || q.t.indexOf(jThread)>-1; }).length; }
+  function renderJ(){
+    Array.prototype.forEach.call(tabsEl.children,function(b,i){
+      b.setAttribute('aria-selected', i===jPart);
+      b.querySelector('.ct').textContent='· '+J[i].total+' prompts';
+    });
+    var p=J[jPart];
+    var items=p.prompts.filter(function(q){ return !jThread || q.t.indexOf(jThread)>-1; });
+    var h='<div class="j-part-intro"><p>'+esc(p.intro)+'</p><p class="tagline">'+esc(p.tag)+'</p></div>';
+    var inJournal = jThread ? p.tt[jThread] : p.total;
+    var more = inJournal - items.length;
+    h+='<ol class="j-grid">'+items.map(function(q){ return '<li class="prompt"><div><div class="num">'+q.n+'</div><div class="icons">'+icons(q.t)+'</div></div><div><q>'+esc(q.q)+'</q><p>'+esc(q.s)+'</p></div></li>'; }).join('');
+    if(more>0){ h+='<li class="prompt locked"><div><div class="num">+'+more+'</div></div><div><q>'+(more===1?'One more prompt':more+' more prompts')+(jThread?' on the '+esc(NAME[jThread])+' thread':'')+' in this part.</q><p>They\'re waiting in the full journal. <a href="#j-buy">Find out how to get it</a></p></div></li>'; }
+    h+='</ol>';
+    partEl.innerHTML=h;
+  }
+  document.querySelectorAll('.thread').forEach(function(b){
+    b.addEventListener('click',function(){
+      jThread=+b.dataset.t;
+      document.querySelectorAll('.thread').forEach(function(x){ var on=x===b; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on); });
+      renderJ();
+    });
+  });
+  document.getElementById('j-random').addEventListener('click',function(){
+    var pool=[]; J.forEach(function(p){ p.prompts.forEach(function(q){ if(!jThread || q.t.indexOf(jThread)>-1) pool.push({p:p,q:q}); }); });
+    var r=pool[Math.floor(Math.random()*pool.length)];
+    pickEl.hidden=false;
+    pickEl.innerHTML='<p class="from">'+esc(r.p.part)+' · '+esc(r.p.title)+'</p><q>'+esc(r.q.q)+'</q><p>'+esc(r.q.s)+'</p>';
+  });
+  renderJ();
+})();
+</script>
+</body>
+</html>
