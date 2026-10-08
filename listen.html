@@ -343,8 +343,8 @@ nav a:hover{color:var(--earth)}
 .media{background:var(--paper);border-top:1px solid var(--line)}
 .media-intro{max-width:58ch;margin:1rem auto 0}
 .media-grid{list-style:none;margin:3rem auto 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));align-items:stretch;gap:1.6rem}
-.m-card{background:var(--cream);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
-.m-frame{position:relative;aspect-ratio:9/16;background:var(--espresso)}
+.m-card{background:var(--cream);border:1px solid var(--line);border-radius:4px;overflow:visible;display:flex;flex-direction:column}
+.m-frame{position:relative;aspect-ratio:9/16;background:var(--espresso);border-radius:4px 4px 0 0;overflow:hidden}
 .m-frame.wide{aspect-ratio:16/9}
 .m-frame.spot{aspect-ratio:auto;height:380px;background:transparent;order:2}
 .m-card.is-spot{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.4fr;align-items:center}
@@ -358,6 +358,11 @@ nav a:hover{color:var(--earth)}
 .m-play::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(33,69,52,.9) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%23F8F4EC'/%3E%3C/svg%3E") center/38px no-repeat;box-shadow:0 0 0 3px rgba(200,157,74,.8);transition:transform .2s}
 .m-play:hover::after,.m-play:focus-visible::after{transform:scale(1.08)}
 .m-body{padding:1.1rem 1.2rem 1.3rem}
+.m-card{position:relative}
+.m-card.is-bonus{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.m-ribbon{position:absolute;top:14px;left:-6px;z-index:2;background:var(--gold);color:#214534;font-family:var(--serif-head);font-weight:700;font-style:italic;font-size:1.05rem;padding:.3rem .9rem .3rem 1rem;border-radius:0 3px 3px 0;box-shadow:0 3px 8px rgba(52,37,19,.3);pointer-events:none}
+.m-ribbon::before{content:"";position:absolute;left:0;bottom:-6px;border-top:6px solid #8a6a2e;border-left:6px solid transparent}
+.m-card.is-bonus .m-body p:not(.m-kind):not(:last-child){font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:1.05rem;line-height:1.4}
 .m-kind{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--earth);margin:0}
 .m-body h3{font-size:1.5rem;color:var(--forest);margin:.2rem 0 0}
 .m-body p{margin:.4rem 0 0;font-size:.9rem;color:var(--muted)}
@@ -487,7 +492,7 @@ footer a:hover{color:var(--gold)}
   <div class="wrap center">
     <p class="bh-kicker">For readers of <em>Chasing Chaos, Finding Home</em></p>
     <h1 class="rh-title">Listen &amp; Watch</h1>
-    <p class="media-intro">These are the recordings behind the QR codes in the book. Reading on a screen, or don't have your phone handy? Press play right here. Each one is listed with the story it belongs to.</p>
+    <p class="media-intro">These are the recordings behind the QR codes in the book, plus an extra treat you won't find a QR code for. Reading on a screen, or don't have your phone handy? Press play right here. Each one is listed with the story it belongs to.</p>
   </div>
 </section>
 <section class="media" id="listen" aria-label="Recordings from the book">
@@ -554,7 +559,7 @@ footer a:hover{color:var(--gold)}
   var MEDIA = [
     { title: "The Song She Sung on That Special Date", story: "Always on the Outskirts", type: "short", id: "tPkUu4E4w-0", kind: "Listen" },
     { title: "Delta 8 Inspired Spiritual Awakening", story: "All the Way to Heaven", type: "video", id: "NjoDqHfZ1d4", kind: "Watch" },
-    { title: "Sail Away Concert", story: "All the Way to Heaven", teaser: true, type: "short", id: "a9XOV6d1cIo", kind: "Watch" },
+    { title: "Sail Away Concert", story: "All the Way to Heaven", teaser: true, bonus: true, note: "It's in the book, but there's no QR code for this one. You'll only find the video here.", type: "short", id: "a9XOV6d1cIo", kind: "Watch" },
     { title: "The Unheard Playlist", story: "The Unheard Playlist", teaser: true, note: "The songs behind the chapter of the same name. Press play and read along.", type: "spotify", id: "62GkyjAIIL4okMU4RRwbRu", kind: "Playlist" }
   ];
   // ===============================================================
@@ -564,7 +569,7 @@ footer a:hover{color:var(--gold)}
     function esc(t){ var d=document.createElement('div'); d.textContent=t||''; return d.innerHTML; }
     MEDIA.forEach(function(m){
       if(onlyTeasers && !m.teaser) return;
-      var li=document.createElement('li'); li.className='m-card'+(m.type==='video'?' has-wide':'')+(m.type==='spotify'?' is-spot':'');
+      var li=document.createElement('li'); li.className='m-card'+(m.type==='video'?' has-wide':'')+(m.type==='spotify'?' is-spot':'')+(m.bonus?' is-bonus':'');
       var watch = m.type==='link' ? m.url : m.type==='spotify' ? 'https://open.spotify.com/playlist/'+m.id : (m.type==='short' ? 'https://www.youtube.com/shorts/'+m.id : 'https://www.youtube.com/watch?v='+m.id);
       var openLabel = m.type==='spotify' ? 'Open in Spotify' : m.type==='link' ? 'Open' : 'Open on YouTube';
       var frame='';
@@ -573,7 +578,7 @@ footer a:hover{color:var(--gold)}
       } else if(m.type!=='link'){
         frame='<div class="m-frame'+(m.type==='video'?' wide':'')+'"><button type="button" class="m-play" aria-label="Play '+esc(m.title)+'" style="background-image:url(https://i.ytimg.com/vi/'+m.id+'/hqdefault.jpg)"></button></div>';
       }
-      li.innerHTML=frame+'<div class="m-body"><p class="m-kind">'+esc(m.kind||'Watch')+'</p><h3>'+esc(m.title)+'</h3>'+(m.story&&m.story!==m.title?'<p>From “'+esc(m.story)+'”</p>':'')+(m.note?'<p>'+esc(m.note)+'</p>':'')+'<p><a href="'+watch+'" target="_blank" rel="noopener">'+openLabel+'</a></p></div>';
+      li.innerHTML=frame+(m.bonus?'<span class="m-ribbon">Extra treat</span>':'')+'<div class="m-body"><p class="m-kind">'+esc(m.kind||'Watch')+(m.bonus?' · Bonus':'')+'</p><h3>'+esc(m.title)+'</h3>'+(m.story&&m.story!==m.title?'<p>From “'+esc(m.story)+'”</p>':'')+(m.note?'<p>'+esc(m.note)+'</p>':'')+'<p><a href="'+watch+'" target="_blank" rel="noopener">'+openLabel+'</a></p></div>';
       var btn=li.querySelector('.m-play');
       if(btn) btn.addEventListener('click',function(){
         var f=document.createElement('iframe');
