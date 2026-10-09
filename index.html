@@ -331,13 +331,18 @@ nav a:hover{color:var(--earth)}
 .m-card.has-wide{grid-column:span 2}
 @media (max-width:700px){.m-card.has-wide{grid-column:auto}}
 .m-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.m-player,.m-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.m-cover{position:absolute;inset:0;z-index:3;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:var(--espresso) center/cover no-repeat}
+.m-cover[hidden]{display:none}
+.m-cover::before{content:"";position:absolute;inset:0;background:rgba(52,37,19,.55)}
+.m-cover::after{content:attr(data-label);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:.7rem 1.3rem .7rem 2.6rem;border-radius:30px;background:rgba(33,69,52,.95) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%23F8F4EC'/%3E%3C/svg%3E") 12px center/22px no-repeat;color:#F8F4EC;font-family:var(--serif-body);font-size:.95rem;white-space:nowrap;box-shadow:0 0 0 3px rgba(200,157,74,.8)}
 .m-play{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:var(--espresso) center/cover no-repeat}
 .m-play::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(33,69,52,.9) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%23F8F4EC'/%3E%3C/svg%3E") center/38px no-repeat;box-shadow:0 0 0 3px rgba(200,157,74,.8);transition:transform .2s}
 .m-play:hover::after,.m-play:focus-visible::after{transform:scale(1.08)}
 .m-body{padding:1.1rem 1.2rem 1.3rem}
 .m-card{position:relative}
 .m-card.is-bonus{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
-.m-ribbon{position:absolute;top:14px;left:-6px;z-index:2;background:var(--gold);color:#214534;font-family:var(--serif-head);font-weight:700;font-style:italic;font-size:1.05rem;padding:.3rem .9rem .3rem 1rem;border-radius:0 3px 3px 0;box-shadow:0 3px 8px rgba(52,37,19,.3);pointer-events:none}
+.m-ribbon{position:absolute;top:14px;left:-6px;z-index:5;background:var(--gold);color:#214534;font-family:var(--serif-head);font-weight:700;font-style:italic;font-size:1.05rem;padding:.3rem .9rem .3rem 1rem;border-radius:0 3px 3px 0;box-shadow:0 3px 8px rgba(52,37,19,.3);pointer-events:none}
 .m-ribbon::before{content:"";position:absolute;left:0;bottom:-6px;border-top:6px solid #8a6a2e;border-left:6px solid transparent}
 .m-card.is-bonus .m-body p:not(.m-kind):not(:last-child){font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:1.05rem;line-height:1.4}
 .m-kind{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--earth);margin:0}
@@ -840,6 +845,45 @@ footer a:hover{color:var(--gold)}
     var grid = document.getElementById('media-grid'); if(!grid) return;
     var onlyTeasers = grid.getAttribute('data-show') === 'teasers';
     function esc(t){ var d=document.createElement('div'); d.textContent=t||''; return d.innerHTML; }
+
+    // ---- YouTube player that hides "More videos" suggestions ----
+    // When a video is paused or ends, YouTube shows other videos from the channel.
+    // We cover the player at those moments with our own Resume / Watch again screen.
+    var ytReady=null;
+    function loadYT(){
+      if(ytReady) return ytReady;
+      ytReady=new Promise(function(res){
+        if(window.YT && window.YT.Player) return res();
+        var prev=window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady=function(){ if(prev) prev(); res(); };
+        var t=document.createElement('script'); t.src='https://www.youtube.com/iframe_api'; document.head.appendChild(t);
+      });
+      return ytReady;
+    }
+    function startVideo(btn, m){
+      var frame=btn.parentNode;
+      var holder=document.createElement('div'); holder.className='m-player';
+      var cover=document.createElement('button'); cover.type='button'; cover.className='m-cover'; cover.hidden=true;
+      cover.style.backgroundImage='url(https://i.ytimg.com/vi/'+m.id+'/hqdefault.jpg)';
+      btn.replaceWith(holder); frame.appendChild(cover);
+      loadYT().then(function(){
+        var player=new YT.Player(holder,{
+          host:'https://www.youtube-nocookie.com', videoId:m.id,
+          playerVars:{autoplay:1, rel:0, playsinline:1, modestbranding:1, iv_load_policy:3, fs:1},
+          events:{
+            onStateChange:function(e){
+              if(e.data===YT.PlayerState.PAUSED){ cover.textContent=''; cover.setAttribute('aria-label','Resume '+m.title); cover.dataset.label='Resume'; cover.hidden=false; }
+              else if(e.data===YT.PlayerState.ENDED){ cover.setAttribute('aria-label','Watch '+m.title+' again'); cover.dataset.label='Watch again'; cover.hidden=false; }
+              else if(e.data===YT.PlayerState.PLAYING){ cover.hidden=true; }
+            }
+          }
+        });
+        cover.addEventListener('click',function(){
+          if(cover.dataset.label==='Watch again') player.seekTo(0,true);
+          player.playVideo(); cover.hidden=true;
+        });
+      });
+    }
     MEDIA.forEach(function(m){
       if(onlyTeasers && !m.teaser) return;
       var li=document.createElement('li'); li.className='m-card'+(m.type==='video'?' has-wide':'')+(m.type==='spotify'?' is-spot':'')+(m.bonus?' is-bonus':'');
@@ -853,12 +897,7 @@ footer a:hover{color:var(--gold)}
       }
       li.innerHTML=frame+(m.bonus?'<span class="m-ribbon">Extra treat</span>':'')+'<div class="m-body"><p class="m-kind">'+esc(m.kind||'Watch')+(m.bonus?' · Bonus':'')+'</p><h3>'+esc(m.title)+'</h3>'+(m.story&&m.story!==m.title?'<p>From “'+esc(m.story)+'”</p>':'')+(m.note?'<p>'+esc(m.note)+'</p>':'')+'<p><a href="'+watch+'" target="_blank" rel="noopener">'+openLabel+'</a></p></div>';
       var btn=li.querySelector('.m-play');
-      if(btn) btn.addEventListener('click',function(){
-        var f=document.createElement('iframe');
-        f.src='https://www.youtube-nocookie.com/embed/'+m.id+'?autoplay=1&rel=0';
-        f.title=m.title; f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
-        btn.replaceWith(f);
-      });
+      if(btn) btn.addEventListener('click',function(){ startVideo(btn, m); });
       grid.appendChild(li);
     });
   })();
