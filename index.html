@@ -5,10 +5,10 @@
 <meta name="color-scheme" content="light only">
 <meta name="theme-color" content="#F8F4EC">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Chasing Chaos, Finding Home by Jenn Kassan | Figuring It Out™</title>
-<meta name="description" content="Figuring It Out™ with Jenn Kassan. Stories, community, and small steps forward. Home of Chasing Chaos, Finding Home: A Collection of Memories, Poems, and Stories.">
-<meta property="og:title" content="Chasing Chaos, Finding Home by Jenn Kassan">
-<meta property="og:description" content="A Collection of Memories, Poems, and Stories. Some journeys don't begin with a destination. They begin with a memory.">
+<title>Figuring It Out | Jenn Kassan</title>
+<meta name="description" content="Figuring It Out with Jenn Kassan. Stories, community, and small steps forward. Home of Chasing Chaos, Finding Home: A Collection of Memories, Poems, and Stories.">
+<meta property="og:title" content="Figuring It Out with Jenn Kassan">
+<meta property="og:description" content="Finding clarity in the chaos. Stories, community, and the book Chasing Chaos, Finding Home: A Collection of Memories, Poems, and Stories.">
 <meta property="og:image" content="https://jennkassan.com/assets/book-cover.webp">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -258,8 +258,8 @@ nav a:hover{color:var(--earth)}
 .bh-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
 .bh-grid>*{min-width:0}
 .bh-kicker{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.3rem;color:var(--earth);margin:0 0 .6rem}
-.bh-text h1{font-family:var(--serif-head);font-weight:600;font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.98;letter-spacing:-.005em;color:var(--forest)}
-.bh-text h1 em{display:block;font-style:italic;font-weight:500;color:var(--espresso)}
+.bh-text h1,.bh-title{font-family:var(--serif-head);font-weight:600;font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.98;letter-spacing:-.005em;color:var(--forest)}
+.bh-text h1 em,.bh-title em{display:block;font-style:italic;font-weight:500;color:var(--espresso)}
 .bh-desc{font-size:1rem;letter-spacing:.03em;color:var(--earth);margin:1.1rem 0 0;font-weight:700}
 .bh-quote{font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:clamp(1.4rem,2.4vw,1.75rem);line-height:1.35;margin:1.6rem 0 0;padding-left:1.1rem;border-left:2px solid var(--gold);max-width:36ch}
 .bh-body{margin:1.3rem 0 0;max-width:50ch}
@@ -365,6 +365,31 @@ nav a:hover{color:var(--earth)}
 .mr-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 
 
+
+/* ---------- FIO hero (brand first, book featured) ---------- */
+.fio-hero{padding:3.5rem 0 4.5rem;background:linear-gradient(180deg,var(--cream) 0%,color-mix(in srgb,var(--parchment) 22%,var(--cream)) 100%)}
+.fh-grid{position:relative;display:grid;grid-template-columns:1.35fr .85fr;gap:3.5rem;align-items:center}
+.fh-grid>*{min-width:0}
+.fio-hero .hero-logo{width:clamp(150px,18vw,220px)}
+.fio-hero h1{font-size:clamp(2rem,8.4vw,3.5rem)}
+@media (min-width:901px){.fio-hero h1{font-size:clamp(2.4rem,4.1vw,3.5rem);white-space:nowrap}}
+.fh-sub{max-width:46ch;margin:1.1rem auto 0;color:var(--muted)}
+.fh-book{position:relative;background:var(--paper);border:1px solid var(--gold);border-radius:6px;padding:1.6rem 1.6rem 1.8rem;text-align:center;box-shadow:0 22px 50px rgba(52,37,19,.16)}
+.fh-book::before{content:"";position:absolute;inset:7px;border:1px solid var(--line);border-radius:3px;pointer-events:none}
+.fhb-kicker{position:relative;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.15rem;color:var(--earth);margin:0 0 1rem}
+.fhb-cover{position:relative;display:block;width:min(210px,62%);margin:0 auto 1.1rem}
+.fhb-cover img{width:100%;height:auto;border-radius:2px 5px 5px 2px;box-shadow:-5px 0 0 -2px rgba(52,37,19,.35),0 18px 34px rgba(52,37,19,.3);transition:transform .25s}
+.fhb-cover:hover img{transform:translateY(-3px)}
+.fh-book h2{position:relative;font-family:var(--serif-head);font-weight:600;font-size:clamp(1.6rem,2.4vw,2rem);line-height:1.05;color:var(--forest)}
+.fh-book h2 em{display:block;font-style:italic;font-weight:500;color:var(--espresso)}
+.fhb-desc{position:relative;font-size:.85rem;font-weight:700;letter-spacing:.02em;color:var(--earth);margin:.6rem 0 1.2rem}
+.fhb-cta{position:relative;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fhb-more{font-size:.9rem}
+@media (max-width:900px){
+  .fh-grid{grid-template-columns:1fr;gap:2.6rem}
+  .fh-book{max-width:420px;margin-inline:auto}
+}
+.book-hero{border-top:1px solid var(--line)}
 /* ---------- philosophy ---------- */
 .philo{background:var(--paper);border-block:1px solid var(--line)}
 .steps{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
@@ -445,7 +470,7 @@ footer a:hover{color:var(--gold)}
 
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="brand" href="#top"><img src="assets/logo-sm.webp" alt="" width="42" height="43"><b>FIGURING IT OUT<sup>™</sup></b></a>
+    <a class="brand" href="#top"><img src="assets/logo-sm.webp" alt="" width="42" height="43"><b>FIGURING IT OUT</b></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" aria-label="Main">
       <ul>
@@ -462,26 +487,81 @@ footer a:hover{color:var(--gold)}
 </header>
 
 <main>
-<!-- BOOK HERO -->
-<section class="book-hero" aria-labelledby="bh-h">
+<!-- FIO HERO -->
+<section class="hero fio-hero" id="fio" aria-labelledby="fio-h">
+  <img class="decor leaves" src="assets/leaves.webp" alt="">
+  <img class="decor hills" src="assets/hills.webp" alt="">
+  <div class="wrap fh-grid">
+    <div class="fh-brand">
+      <img class="hero-logo" src="assets/logo.webp" alt="Figuring It Out logo: a compass and hourglass above an open book, with leaves and a winding path" width="250" height="259" fetchpriority="high">
+      <h1 id="fio-h">FIGURING IT OUT</h1>
+      <p class="tag">Finding Clarity in the Chaos</p>
+      <div class="rule" aria-hidden="true"><span></span></div>
+      <p class="promise">Life doesn't ask us to have all the answers. <em>It asks us to keep moving anyway.</em></p>
+      <p class="fh-sub">Stories, reflection, and a community for anyone working through the messy middle, one small step at a time.</p>
+      <div class="hero-cta">
+        <a class="btn btn-forest" href="#paths">Explore Figuring It Out</a>
+        <a class="btn btn-line" href="#together">Join the community</a>
+      </div>
+    </div>
+    <aside class="fh-book" aria-labelledby="fhb-h">
+      <p class="fhb-kicker">The first book from Figuring It Out</p>
+      <a class="fhb-cover" href="#book"><img src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home by Jenn Kassan: a campsite at sunset with an RV by a lake, a campfire, a Figuring It Out journal, and a stack of books labeled Courage, Grace, Growth, Gratitude" width="640" height="910"></a>
+      <h2 id="fhb-h">Chasing Chaos, <em>Finding Home</em></h2>
+      <p class="fhb-desc">A Collection of Memories, Poems, and Stories</p>
+      <div class="fhb-cta">
+        <a class="btn btn-forest" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="fhb-more" href="#book">About the book</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- TWO PATHS -->
+<section class="paths" id="paths" aria-labelledby="paths-h">
+  <div class="wrap">
+    <div class="center">
+      <h2 id="paths-h">One brand. One story.</h2>
+      <p class="lede">There isn't one right path. Only the one that's right for you.</p>
+    </div>
+    <div class="path-grid">
+      <article class="path life">
+        <div class="which">Personal</div>
+        <h3>Stories, Community &amp; Growth</h3>
+        <p>Stories and reflections from a life spent figuring things out, and a place to share your own small steps forward.</p>
+        <p class="words">Fear, questions, grief, change. And then hope, perspective, confidence, home.</p>
+        <a class="btn btn-forest" href="#together">Join the conversation</a>
+      </article>
+      <article class="path work">
+        <div class="which">Professional</div>
+        <h3>Something for Oncology Data Specialists <span class="badge">Stay tuned</span></h3>
+        <p>Thirty years in cancer registry taught me a lot about turning complexity into clarity. I'm building something to share that with my fellow ODS professionals.</p>
+        <p class="words">The sand is still settling in this hourglass. Good things take a little time.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK FEATURE -->
+<section class="book-hero" id="book" aria-labelledby="bh-h">
   <div class="wrap bh-grid">
     <div class="bh-text">
-      <p class="bh-kicker">A new book by Jenn Kassan</p>
-      <h1 id="bh-h">Chasing Chaos, <em>Finding Home</em></h1>
+      <p class="bh-kicker">The book</p>
+      <h2 class="bh-title" id="bh-h">Chasing Chaos, <em>Finding Home</em></h2>
       <p class="bh-desc">A Collection of Memories, Poems, and Stories</p>
       <p class="bh-quote">Some journeys don't begin with a destination. They begin with a memory.</p>
       <p class="bh-body">Memories, poems, and stories about losing my mother at three years old, and the long, winding path from chaos to home: through grief, motherhood, and finally understanding my own mind.</p>
       <div class="bh-cta">
         <a class="btn btn-forest btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
-        <a class="btn btn-line btn-lg" href="#book">Look inside</a>
+        <a class="btn btn-line btn-lg" href="#inside">Look inside</a>
       </div>
     </div>
-    <figure class="bh-cover"><img class="cover-img" src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home by Jenn Kassan: a campsite at sunset with an RV by a lake, a campfire, a Figuring It Out journal, and a stack of books labeled Courage, Grace, Growth, Gratitude" width="640" height="910" fetchpriority="high"></figure>
+    <figure class="bh-cover"><img class="cover-img" src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home by Jenn Kassan: a campsite at sunset with an RV by a lake, a campfire, a Figuring It Out journal, and a stack of books labeled Courage, Grace, Growth, Gratitude" width="640" height="910" loading="lazy"></figure>
   </div>
 </section>
 
 <!-- BOOK -->
-<section class="book" id="book" aria-labelledby="book-h">
+<section class="book" id="inside" aria-labelledby="book-h">
   <div class="wrap">
     <div class="center">
       <h2 id="book-h">Inside the Book</h2>
@@ -571,48 +651,6 @@ footer a:hover{color:var(--gold)}
       <div class="j-buy-cta">
         <a class="btn btn-forest" href="https://www.amazon.com/stores/Jenn-Kassan/author/B0HHZ6BMRG" target="_blank" rel="noopener">Visit my Amazon author page</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- FIGURING IT OUT INTRO -->
-<section class="hero fio-intro" id="fio" aria-labelledby="fio-h">
-  <img class="decor leaves" src="assets/leaves.webp" alt="">
-  <img class="decor hills" src="assets/hills.webp" alt="">
-  <div class="wrap">
-    <img class="hero-logo" src="assets/logo.webp" alt="Figuring It Out logo: a compass and hourglass above an open book, with leaves and a winding path" width="250" height="259">
-    <h2 class="fio-title" id="fio-h">FIGURING IT OUT<sup>™</sup></h2>
-    <p class="tag">Finding Clarity in the Chaos</p>
-    <div class="rule" aria-hidden="true"><span></span></div>
-    <p class="promise">Life doesn't ask us to have all the answers. <em>It asks us to keep moving anyway.</em></p>
-    <div class="hero-cta">
-      <a class="btn btn-forest" href="#together">Join the community</a>
-      <a class="btn btn-line" href="#did">Share an "I did a thing"</a>
-    </div>
-  </div>
-</section>
-
-<!-- TWO PATHS -->
-<section class="paths" aria-labelledby="paths-h">
-  <div class="wrap">
-    <div class="center">
-      <h2 id="paths-h">One brand. One story.</h2>
-      <p class="lede">There isn't one right path. Only the one that's right for you.</p>
-    </div>
-    <div class="path-grid">
-      <article class="path life">
-        <div class="which">Personal</div>
-        <h3>Stories, Community &amp; Growth</h3>
-        <p>Stories and reflections from a life spent figuring things out, and a place to share your own small steps forward.</p>
-        <p class="words">Fear, questions, grief, change. And then hope, perspective, confidence, home.</p>
-        <a class="btn btn-forest" href="#together">Join the conversation</a>
-      </article>
-      <article class="path work">
-        <div class="which">Professional</div>
-        <h3>Something for Oncology Data Specialists <span class="badge">Stay tuned</span></h3>
-        <p>Thirty years in cancer registry taught me a lot about turning complexity into clarity. I'm building something to share that with my fellow ODS professionals.</p>
-        <p class="words">The sand is still settling in this hourglass. Good things take a little time.</p>
-      </article>
     </div>
   </div>
 </section>
@@ -785,7 +823,7 @@ footer a:hover{color:var(--gold)}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="#top"><img src="assets/logo-sm.webp" alt="" width="56" height="58"><b>FIGURING IT OUT<sup>™</sup></b></a>
+        <a class="brand" href="#top"><img src="assets/logo-sm.webp" alt="" width="56" height="58"><b>FIGURING IT OUT</b></a>
         <p class="tag">Finding Clarity in the Chaos</p>
         <p style="margin-top:1rem;max-width:36ch">Stories, community, and small steps forward.</p>
       </div>
@@ -811,7 +849,7 @@ footer a:hover{color:var(--gold)}
     </div>
     <p class="care"><strong style="color:#F8F4EC">A note of care.</strong> This is a community for encouragement and shared stories, not professional or emergency support, and messages sent through this site aren't monitored regularly. If you're in crisis or thinking about harming yourself, please call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline, US) or call <strong>911</strong>. Outside the US, contact your local emergency number.</p>
     <div class="copy">
-      <span>© <span id="yr">2026</span> Figuring It Out™ · Jenn Kassan. All rights reserved.</span>
+      <span>© <span id="yr">2026</span> Figuring It Out · Jenn Kassan. All rights reserved.</span>
       <span class="script">Just keep moving.</span>
     </div>
   </div>

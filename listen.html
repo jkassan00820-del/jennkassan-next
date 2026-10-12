@@ -256,8 +256,8 @@ nav a:hover{color:var(--earth)}
 .bh-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
 .bh-grid>*{min-width:0}
 .bh-kicker{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.3rem;color:var(--earth);margin:0 0 .6rem}
-.bh-text h1{font-family:var(--serif-head);font-weight:600;font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.98;letter-spacing:-.005em;color:var(--forest)}
-.bh-text h1 em{display:block;font-style:italic;font-weight:500;color:var(--espresso)}
+.bh-text h1,.bh-title{font-family:var(--serif-head);font-weight:600;font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:.98;letter-spacing:-.005em;color:var(--forest)}
+.bh-text h1 em,.bh-title em{display:block;font-style:italic;font-weight:500;color:var(--espresso)}
 .bh-desc{font-size:1rem;letter-spacing:.03em;color:var(--earth);margin:1.1rem 0 0;font-weight:700}
 .bh-quote{font-family:var(--serif-sub);font-style:italic;font-weight:500;font-size:clamp(1.4rem,2.4vw,1.75rem);line-height:1.35;margin:1.6rem 0 0;padding-left:1.1rem;border-left:2px solid var(--gold);max-width:36ch}
 .bh-body{margin:1.3rem 0 0;max-width:50ch}
@@ -363,6 +363,31 @@ nav a:hover{color:var(--earth)}
 .mr-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 
 
+
+/* ---------- FIO hero (brand first, book featured) ---------- */
+.fio-hero{padding:3.5rem 0 4.5rem;background:linear-gradient(180deg,var(--cream) 0%,color-mix(in srgb,var(--parchment) 22%,var(--cream)) 100%)}
+.fh-grid{position:relative;display:grid;grid-template-columns:1.35fr .85fr;gap:3.5rem;align-items:center}
+.fh-grid>*{min-width:0}
+.fio-hero .hero-logo{width:clamp(150px,18vw,220px)}
+.fio-hero h1{font-size:clamp(2rem,8.4vw,3.5rem)}
+@media (min-width:901px){.fio-hero h1{font-size:clamp(2.4rem,4.1vw,3.5rem);white-space:nowrap}}
+.fh-sub{max-width:46ch;margin:1.1rem auto 0;color:var(--muted)}
+.fh-book{position:relative;background:var(--paper);border:1px solid var(--gold);border-radius:6px;padding:1.6rem 1.6rem 1.8rem;text-align:center;box-shadow:0 22px 50px rgba(52,37,19,.16)}
+.fh-book::before{content:"";position:absolute;inset:7px;border:1px solid var(--line);border-radius:3px;pointer-events:none}
+.fhb-kicker{position:relative;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.15rem;color:var(--earth);margin:0 0 1rem}
+.fhb-cover{position:relative;display:block;width:min(210px,62%);margin:0 auto 1.1rem}
+.fhb-cover img{width:100%;height:auto;border-radius:2px 5px 5px 2px;box-shadow:-5px 0 0 -2px rgba(52,37,19,.35),0 18px 34px rgba(52,37,19,.3);transition:transform .25s}
+.fhb-cover:hover img{transform:translateY(-3px)}
+.fh-book h2{position:relative;font-family:var(--serif-head);font-weight:600;font-size:clamp(1.6rem,2.4vw,2rem);line-height:1.05;color:var(--forest)}
+.fh-book h2 em{display:block;font-style:italic;font-weight:500;color:var(--espresso)}
+.fhb-desc{position:relative;font-size:.85rem;font-weight:700;letter-spacing:.02em;color:var(--earth);margin:.6rem 0 1.2rem}
+.fhb-cta{position:relative;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fhb-more{font-size:.9rem}
+@media (max-width:900px){
+  .fh-grid{grid-template-columns:1fr;gap:2.6rem}
+  .fh-book{max-width:420px;margin-inline:auto}
+}
+.book-hero{border-top:1px solid var(--line)}
 /* ---------- philosophy ---------- */
 .philo{background:var(--paper);border-block:1px solid var(--line)}
 .steps{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
@@ -450,7 +475,7 @@ footer a:hover{color:var(--gold)}
 
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="brand" href="index.html"><img src="assets/logo-sm.webp" alt="" width="42" height="43"><b>FIGURING IT OUT<sup>™</sup></b></a>
+    <a class="brand" href="index.html"><img src="assets/logo-sm.webp" alt="" width="42" height="43"><b>FIGURING IT OUT</b></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" aria-label="Main">
       <ul>
@@ -486,7 +511,7 @@ footer a:hover{color:var(--gold)}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="index.html"><img src="assets/logo-sm.webp" alt="" width="56" height="58"><b>FIGURING IT OUT<sup>™</sup></b></a>
+        <a class="brand" href="index.html"><img src="assets/logo-sm.webp" alt="" width="56" height="58"><b>FIGURING IT OUT</b></a>
         <p class="tag">Finding Clarity in the Chaos</p>
         <p style="margin-top:1rem;max-width:36ch">Stories, community, and small steps forward.</p>
       </div>
@@ -512,7 +537,7 @@ footer a:hover{color:var(--gold)}
     </div>
     <p class="care"><strong style="color:#F8F4EC">A note of care.</strong> This is a community for encouragement and shared stories, not professional or emergency support, and messages sent through this site aren't monitored regularly. If you're in crisis or thinking about harming yourself, please call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline, US) or call <strong>911</strong>. Outside the US, contact your local emergency number.</p>
     <div class="copy">
-      <span>© <span id="yr">2026</span> Figuring It Out™ · Jenn Kassan. All rights reserved.</span>
+      <span>© <span id="yr">2026</span> Figuring It Out · Jenn Kassan. All rights reserved.</span>
       <span class="script">Just keep moving.</span>
     </div>
   </div>
