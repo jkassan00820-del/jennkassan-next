@@ -390,6 +390,10 @@ nav a:hover{color:var(--earth)}
   .fh-book{max-width:420px;margin-inline:auto}
 }
 .book-hero{border-top:1px solid var(--line)}
+
+.jb-flag{display:inline-block;margin:0 0 .5rem;padding:.2rem .7rem;border-radius:20px;background:var(--forest);color:var(--cream);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.fhb-journal{position:relative;margin:1.3rem 0 0;padding-top:1.1rem;border-top:1px solid var(--line);font-size:.86rem;line-height:1.55;color:var(--muted)}
+.fhb-journal span{display:inline-block;margin-right:.35rem;padding:.05rem .5rem;border-radius:12px;background:var(--gold);color:#214534;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:1px}
 /* ---------- philosophy ---------- */
 .philo{background:var(--paper);border-block:1px solid var(--line)}
 .steps{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
@@ -513,6 +517,7 @@ footer a:hover{color:var(--gold)}
         <a class="btn btn-forest" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
         <a class="fhb-more" href="#book">About the book</a>
       </div>
+      <p class="fhb-journal"><span>New</span> The companion journal, <em>Finding Home in the Chaos</em>, is out now. <a href="#journal">See the journal</a></p>
     </aside>
   </div>
 </section>
@@ -576,7 +581,7 @@ footer a:hover{color:var(--gold)}
     </ul>
     <div class="extras">
       <div><h3>A song index</h3><p>The music woven through the stories, gathered in one place so you can listen along. <a href="#listen">Listen to a few of them here</a>.</p></div>
-      <div><h3>A journal companion</h3><p><em>Finding Home in the Chaos</em> gives you room to write your own story alongside mine. <a href="#journal">Preview it below</a>.</p></div>
+      <div><h3>A journal companion</h3><p><em>Finding Home in the Chaos</em> gives you room to write your own story alongside mine. It's out now. <a href="#journal">Try a few prompts</a>.</p></div>
     </div>
     <div class="book-close">
       <a class="btn btn-forest btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
@@ -608,7 +613,7 @@ footer a:hover{color:var(--gold)}
   <div class="wrap">
     <div class="center">
       <h2 id="journal-h">Finding Home in the Chaos</h2>
-      <p class="lede">A reflective journal companion to <em>Chasing Chaos, Finding Home</em>. Try a few prompts here.</p>
+      <p class="lede">The reflective journal companion to <em>Chasing Chaos, Finding Home</em>. Now available. Try a few prompts here.</p>
     </div>
 
     <div class="j-intro">
@@ -645,11 +650,12 @@ footer a:hover{color:var(--gold)}
 
     <div class="j-buy" id="j-buy">
       <div>
-        <h3>Want the whole journal?</h3>
-        <p>Forty prompts across four parts, room to write, and the four threads that tie it to <em>Chasing Chaos, Finding Home</em>. What you see here is a small sample. The full journal is on its way, so keep an eye on my Amazon author page for the release.</p>
+        <p class="jb-flag">Now available</p>
+        <h3>The full journal is here</h3>
+        <p>Forty prompts across four parts, room to write, and the four threads that tie it to <em>Chasing Chaos, Finding Home</em>. What you see here is a small sample. The complete journal is out now.</p>
       </div>
       <div class="j-buy-cta">
-        <a class="btn btn-forest" href="https://www.amazon.com/stores/Jenn-Kassan/author/B0HHZ6BMRG" target="_blank" rel="noopener">Visit my Amazon author page</a>
+        <a class="btn btn-forest journal-buy" href="https://www.amazon.com/stores/Jenn-Kassan/author/B0HHZ6BMRG" target="_blank" rel="noopener">Get the journal on Amazon</a>
       </div>
     </div>
   </div>
@@ -835,6 +841,7 @@ footer a:hover{color:var(--gold)}
           <li><a href="#book">The Book</a></li>
           <li><a href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Get the book</a></li>
           <li><a href="#journal">Journal Companion</a></li>
+          <li><a class="journal-buy" href="https://www.amazon.com/stores/Jenn-Kassan/author/B0HHZ6BMRG" target="_blank" rel="noopener">Get the journal</a></li>
           <li><a href="#about">About Jenn</a></li>
         </ul>
       </div>
@@ -967,7 +974,7 @@ footer a:hover{color:var(--gold)}
     var inJournal = jThread ? p.tt[jThread] : p.total;
     var more = inJournal - items.length;
     h+='<ol class="j-grid">'+items.map(function(q){ return '<li class="prompt"><div><div class="num">'+q.n+'</div><div class="icons">'+icons(q.t)+'</div></div><div><q>'+esc(q.q)+'</q><p>'+esc(q.s)+'</p></div></li>'; }).join('');
-    if(more>0){ h+='<li class="prompt locked"><div><div class="num">+'+more+'</div></div><div><q>'+(more===1?'One more prompt':more+' more prompts')+(jThread?' on the '+esc(NAME[jThread])+' thread':'')+' in this part.</q><p>They\'re waiting in the full journal. <a href="#j-buy">Find out how to get it</a></p></div></li>'; }
+    if(more>0){ h+='<li class="prompt locked"><div><div class="num">+'+more+'</div></div><div><q>'+(more===1?'One more prompt':more+' more prompts')+(jThread?' on the '+esc(NAME[jThread])+' thread':'')+' in this part.</q><p>They\'re waiting in the full journal. <a href="#j-buy">Get the journal</a></p></div></li>'; }
     h+='</ol>';
     partEl.innerHTML=h;
   }
