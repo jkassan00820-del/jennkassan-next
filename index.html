@@ -401,6 +401,34 @@ nav a:hover{color:var(--earth)}
 .fj-link{display:block;margin-top:.2rem;color:var(--earth);text-decoration:underline}
 .fhb-journal:hover .fj-link{color:var(--forest)}
 .fj-new{display:inline-block;margin-right:.35rem;padding:.05rem .5rem;border-radius:12px;background:var(--gold);color:#214534;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:1px}
+
+/* ---------- I did a thing: post builder ---------- */
+.did-intro p{max-width:48ch}
+.chips-label{margin:1.6rem 0 .2rem!important;font-family:var(--serif-sub);font-style:italic;font-weight:600;color:var(--gold)!important;font-size:1.1rem}
+.examples{margin-top:.6rem!important}
+.examples li{padding:0!important;border:0!important}
+.chip{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.08rem;padding:.35rem .85rem;border:1px solid rgba(200,157,74,.55);border-radius:20px;color:#F8F4EC;background:transparent;cursor:pointer;transition:background .2s,color .2s}
+.chip:hover,.chip:focus-visible{background:var(--gold);color:#214534}
+.did-how{list-style:none;counter-reset:h;margin:2.2rem 0 0;padding:1.4rem 0 0;border-top:1px solid rgba(200,157,74,.35);display:grid;gap:.8rem}
+.did-how li{counter-increment:h;display:grid;grid-template-columns:30px 1fr;gap:.8rem;align-items:baseline;color:#E8DDC8;font-size:.95rem}
+.did-how li::before{content:counter(h);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#214534;font-family:var(--serif-head);font-weight:700}
+.did-how b{color:#F8F4EC;font-weight:700}
+.win-card .form-note{max-width:none!important}
+.win-card .tabs{margin-top:1rem}
+.win-card .field textarea{min-height:0}
+.win-card .hint{font-size:.82rem;color:#825A38;margin:.35rem 0 0}
+.win-card[data-mode="quick"] .story-only{display:none}
+.win-card[data-mode="story"] .quick-only{display:none}
+.attach-note{display:grid;gap:.15rem;padding:.8rem 1rem;margin:0 0 1rem;background:#FCDEB7;border-left:3px solid #C89D4A;border-radius:2px;font-size:.88rem;color:#333}
+.attach-note b{color:#214534}
+.attach-note a{color:#825A38;font-weight:700}
+.story-hint{margin:-.2rem 0 1rem!important}
+.preview{margin:.4rem 0 1.1rem}
+.preview-label{font-size:.78rem!important;letter-spacing:.06em;text-transform:uppercase;color:#825A38!important;margin:0 0 .35rem!important}
+.preview-box{white-space:pre-wrap;font-size:.92rem;line-height:1.55;color:#333;background:#fff;border:1px dashed rgba(130,90,56,.45);border-radius:3px;padding:.9rem 1rem;max-height:260px;overflow:auto}
+.preview-box .ph{color:#8a8172;font-style:italic}
+.ask-alt{display:flex;flex-wrap:wrap;gap:.3rem .6rem;justify-content:center;margin-top:1.2rem;padding-top:1rem;border-top:1px solid #E8DDC8;font-size:.9rem;color:#333}
+.ask-alt a{color:#825A38}
 /* ---------- philosophy ---------- */
 .philo{background:var(--paper);border-block:1px solid var(--line)}
 .steps{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
@@ -708,42 +736,86 @@ footer a:hover{color:var(--gold)}
 <!-- I DID A THING -->
 <section class="did" id="did" aria-labelledby="did-h">
   <div class="wrap did-grid">
-    <div>
+    <div class="did-intro">
       <p class="big" aria-hidden="true">I did a thing.</p>
       <h2 id="did-h">Every Step Counts</h2>
-      <p>Moving forward is what builds confidence. Not the giant leaps, the small, ordinary, hard-won steps. Post yours in the Figuring It Out Facebook group, where others can cheer you on, and take a minute to cheer for someone else.</p>
-      <ul class="examples" aria-label="Examples">
-        <li>I made the appointment</li>
-        <li>I asked for help</li>
-        <li>I finished the chapter</li>
-        <li>I said no</li>
-        <li>I started over</li>
-        <li>I went for the walk</li>
-        <li>I published my own music</li>
-        <li>I went back to school</li>
-        <li>I set a boundary</li>
-        <li>I told my story</li>
-        <li>I took the trip</li>
-        <li>I forgave myself</li>
-        <li>I tried something new</li>
-        <li>I spoke up</li>
+      <p>Moving forward is what builds confidence. Not the giant leaps, the small, ordinary, hard-won steps. Got out of bed on a hard day? That counts. Published a whole album? That counts too.</p>
+      <p>Share yours in the Figuring It Out Facebook group, where people cheer each other on. Take a minute to cheer for someone else while you're there.</p>
+      <p class="chips-label">Need a nudge? Tap one to start.</p>
+      <ul class="examples" aria-label="Example wins">
+        <li><button type="button" class="chip">I made the appointment</button></li>
+        <li><button type="button" class="chip">I asked for help</button></li>
+        <li><button type="button" class="chip">I finished the chapter</button></li>
+        <li><button type="button" class="chip">I said no</button></li>
+        <li><button type="button" class="chip">I started over</button></li>
+        <li><button type="button" class="chip">I went for the walk</button></li>
+        <li><button type="button" class="chip">I published my own music</button></li>
+        <li><button type="button" class="chip">I went back to school</button></li>
+        <li><button type="button" class="chip">I set a boundary</button></li>
+        <li><button type="button" class="chip">I told my story</button></li>
+        <li><button type="button" class="chip">I took the trip</button></li>
+        <li><button type="button" class="chip">I forgave myself</button></li>
+        <li><button type="button" class="chip">I tried something new</button></li>
+        <li><button type="button" class="chip">I spoke up</button></li>
       </ul>
+      <ol class="did-how" aria-label="How it works">
+        <li><span><b>Write it here.</b> One line, or the whole story.</span></li>
+        <li><span><b>Copy it.</b> One tap copies your post.</span></li>
+        <li><span><b>Post it in the group.</b> Paste it, then add a photo, video, or file if you have one.</span></li>
+      </ol>
     </div>
 
-    <div class="card-form group-card">
-      <h3 class="cf-title">Post it in the group</h3>
-      <p class="cf-sub">The Figuring It Out Facebook group is where people share their wins and questions and answer each other.</p>
-      <div class="gc-option">
-        <h4>Share your "I did a thing"</h4>
-        <p>Start your post with "I did a thing" so others can find it and cheer you on.</p>
-        <a class="btn btn-forest community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Post your win in the group</a>
+    <div class="card-form win-card" id="win-card">
+      <h3 class="cf-title">Share your win</h3>
+      <div class="tabs" role="tablist" aria-label="How much do you want to share?">
+        <button type="button" role="tab" id="t-quick" aria-selected="true" aria-controls="win-form" data-mode="quick">Quick win</button>
+        <button type="button" role="tab" id="t-story" aria-selected="false" aria-controls="win-form" data-mode="story">Tell the story</button>
       </div>
-      <div class="gc-option">
-        <h4>Ask a question</h4>
-        <p>Stuck on a decision, a change, or a next step? Ask the group. Someone has probably been where you are.</p>
-        <a class="btn btn-line-dark community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Ask in the group</a>
+      <form id="win-form" novalidate>
+        <div class="field">
+          <label for="w-what">What did you do?</label>
+          <textarea id="w-what" rows="2" placeholder="I finally..."></textarea>
+          <p class="hint quick-only">That's it. Small wins are the whole point.</p>
+        </div>
+        <div class="story-only">
+          <div class="field">
+            <label for="w-hard">What made it hard?</label>
+            <textarea id="w-hard" rows="2" placeholder="What were you up against? Fear, time, money, other people, yourself..."></textarea>
+          </div>
+          <div class="field">
+            <label for="w-helped">What helped you do it?</label>
+            <textarea id="w-helped" rows="2" placeholder="A person, a song, a thought, a deadline, sheer stubbornness..."></textarea>
+          </div>
+          <div class="field">
+            <label for="w-feel">How do you feel now?</label>
+            <input id="w-feel" type="text" placeholder="Proud, relieved, terrified, all of it...">
+          </div>
+          <div class="field">
+            <label for="w-tell">What would you tell someone facing the same thing?</label>
+            <textarea id="w-tell" rows="2" placeholder="One piece of advice, or just encouragement."></textarea>
+          </div>
+          <div class="field">
+            <label for="w-link">Got a link to share? <span class="hint">(optional)</span></label>
+            <input id="w-link" type="url" inputmode="url" placeholder="Your song, video, blog, shop, or anything you made">
+          </div>
+          <p class="hint story-hint">Answer as many or as few as you like. Skip anything that doesn't fit.</p>
+        </div>
+        <div class="attach-note">
+          <b>Have a photo, video, or file to show off?</b>
+          <span>Share it in the <a class="community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Figuring It Out Facebook group</a>. After you paste your post there, tap the photo icon to add it. Pictures of what you made, where you went, or the moment itself are always welcome.</span>
+        </div>
+        <div class="preview" aria-live="polite">
+          <p class="preview-label">Your post</p>
+          <div class="preview-box" id="w-preview"><span class="ph">Start typing and your post will appear here.</span></div>
+        </div>
+        <button class="btn btn-forest" type="submit" id="w-go">Copy my post &amp; open the group</button>
+        <div class="sent" id="w-sent" role="status"></div>
+        <p class="form-note">Posting needs a Facebook account. If you're new, Facebook will ask you to join the group first. Nothing you type here is saved or sent anywhere.</p>
+      </form>
+      <div class="ask-alt">
+        <span>Figuring something out instead?</span>
+        <a class="community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Ask a question in the group</a>
       </div>
-      <p class="form-note">You'll need a Facebook account. If you're new, Facebook will ask you to join the group first.</p>
     </div>
   </div>
 </section>
@@ -952,6 +1024,68 @@ footer a:hover{color:var(--gold)}
       var btn=li.querySelector('.m-play');
       if(btn) btn.addEventListener('click',function(){ startVideo(btn, m); });
       grid.appendChild(li);
+    });
+  })();
+
+  // ====== I did a thing: post builder ======
+  (function(){
+    var card=document.getElementById('win-card'); if(!card) return;
+    var GROUP="https://www.facebook.com/share/g/17vJJT11QF/";
+    var mode='quick';
+    var f={what:'w-what',hard:'w-hard',helped:'w-helped',feel:'w-feel',tell:'w-tell',link:'w-link'};
+    Object.keys(f).forEach(function(k){ f[k]=document.getElementById(f[k]); });
+    var prev=document.getElementById('w-preview'), sent=document.getElementById('w-sent');
+    card.setAttribute('data-mode',mode);
+    function v(el){ return (el.value||'').trim(); }
+    function build(){
+      var what=v(f.what); if(!what) return '';
+      what=what.replace(/^i did a thing[:!.\s-]*/i,'');
+      var out='I did a thing! '+what;
+      if(!/[.!?]$/.test(out)) out+='.';
+      if(mode==='story'){
+        var parts=[['What made it hard',f.hard],['What helped',f.helped],['How I feel now',f.feel],['If you are facing the same thing',f.tell]];
+        parts.forEach(function(p){ var t=v(p[1]); if(t) out+='\n\n'+p[0]+': '+t; });
+        var l=v(f.link); if(l) out+='\n\nSee it here: '+l;
+      }
+      return out+'\n\n#IDidAThing';
+    }
+    function render(){
+      var t=build();
+      if(t){ prev.textContent=t; } else { prev.innerHTML='<span class="ph">Start typing and your post will appear here.</span>'; }
+      sent.classList.remove('show');
+    }
+    Object.keys(f).forEach(function(k){ f[k].addEventListener('input',render); });
+    card.querySelectorAll('[data-mode]').forEach(function(tab){
+      tab.addEventListener('click',function(){
+        mode=tab.getAttribute('data-mode'); card.setAttribute('data-mode',mode);
+        card.querySelectorAll('[data-mode][role="tab"]').forEach(function(x){ x.setAttribute('aria-selected', x===tab); });
+        render();
+      });
+    });
+    document.querySelectorAll('.chip').forEach(function(c){
+      c.addEventListener('click',function(){
+        f.what.value=c.textContent+'.'; render();
+        card.scrollIntoView({behavior:'smooth',block:'start'});
+        setTimeout(function(){ f.what.focus({preventScroll:true}); var n=f.what.value.length; f.what.setSelectionRange(n,n); },450);
+      });
+    });
+    function copy(text){
+      if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(text); }
+      return new Promise(function(res,rej){
+        var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy') ? res() : rej(); }catch(e){ rej(e); } finally{ document.body.removeChild(ta); }
+      });
+    }
+    document.getElementById('win-form').addEventListener('submit',function(e){
+      e.preventDefault();
+      var t=build();
+      if(!t){ f.what.focus(); sent.textContent='Start with what you did. One line is plenty.'; sent.classList.add('show'); return; }
+      copy(t).then(function(){
+        sent.innerHTML='<b>Copied.</b> In the group, start a new post, paste, and add a photo, video, or file if you have one. <a href="'+GROUP+'" target="_blank" rel="noopener">Open the group again</a>';
+      },function(){
+        sent.innerHTML='Your post is ready. Select the text in the preview above, copy it, and paste it into a new post in the group. <a href="'+GROUP+'" target="_blank" rel="noopener">Open the group</a>';
+      }).then(function(){ sent.classList.add('show'); window.open(GROUP,'_blank','noopener'); });
     });
   })();
   // ====== Journal companion ======

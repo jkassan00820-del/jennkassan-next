@@ -399,6 +399,34 @@ nav a:hover{color:var(--earth)}
 .fj-link{display:block;margin-top:.2rem;color:var(--earth);text-decoration:underline}
 .fhb-journal:hover .fj-link{color:var(--forest)}
 .fj-new{display:inline-block;margin-right:.35rem;padding:.05rem .5rem;border-radius:12px;background:var(--gold);color:#214534;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;vertical-align:1px}
+
+/* ---------- I did a thing: post builder ---------- */
+.did-intro p{max-width:48ch}
+.chips-label{margin:1.6rem 0 .2rem!important;font-family:var(--serif-sub);font-style:italic;font-weight:600;color:var(--gold)!important;font-size:1.1rem}
+.examples{margin-top:.6rem!important}
+.examples li{padding:0!important;border:0!important}
+.chip{font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.08rem;padding:.35rem .85rem;border:1px solid rgba(200,157,74,.55);border-radius:20px;color:#F8F4EC;background:transparent;cursor:pointer;transition:background .2s,color .2s}
+.chip:hover,.chip:focus-visible{background:var(--gold);color:#214534}
+.did-how{list-style:none;counter-reset:h;margin:2.2rem 0 0;padding:1.4rem 0 0;border-top:1px solid rgba(200,157,74,.35);display:grid;gap:.8rem}
+.did-how li{counter-increment:h;display:grid;grid-template-columns:30px 1fr;gap:.8rem;align-items:baseline;color:#E8DDC8;font-size:.95rem}
+.did-how li::before{content:counter(h);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#214534;font-family:var(--serif-head);font-weight:700}
+.did-how b{color:#F8F4EC;font-weight:700}
+.win-card .form-note{max-width:none!important}
+.win-card .tabs{margin-top:1rem}
+.win-card .field textarea{min-height:0}
+.win-card .hint{font-size:.82rem;color:#825A38;margin:.35rem 0 0}
+.win-card[data-mode="quick"] .story-only{display:none}
+.win-card[data-mode="story"] .quick-only{display:none}
+.attach-note{display:grid;gap:.15rem;padding:.8rem 1rem;margin:0 0 1rem;background:#FCDEB7;border-left:3px solid #C89D4A;border-radius:2px;font-size:.88rem;color:#333}
+.attach-note b{color:#214534}
+.attach-note a{color:#825A38;font-weight:700}
+.story-hint{margin:-.2rem 0 1rem!important}
+.preview{margin:.4rem 0 1.1rem}
+.preview-label{font-size:.78rem!important;letter-spacing:.06em;text-transform:uppercase;color:#825A38!important;margin:0 0 .35rem!important}
+.preview-box{white-space:pre-wrap;font-size:.92rem;line-height:1.55;color:#333;background:#fff;border:1px dashed rgba(130,90,56,.45);border-radius:3px;padding:.9rem 1rem;max-height:260px;overflow:auto}
+.preview-box .ph{color:#8a8172;font-style:italic}
+.ask-alt{display:flex;flex-wrap:wrap;gap:.3rem .6rem;justify-content:center;margin-top:1.2rem;padding-top:1rem;border-top:1px solid #E8DDC8;font-size:.9rem;color:#333}
+.ask-alt a{color:#825A38}
 /* ---------- philosophy ---------- */
 .philo{background:var(--paper);border-block:1px solid var(--line)}
 .steps{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:0;position:relative}
@@ -637,6 +665,68 @@ footer a:hover{color:var(--gold)}
       var btn=li.querySelector('.m-play');
       if(btn) btn.addEventListener('click',function(){ startVideo(btn, m); });
       grid.appendChild(li);
+    });
+  })();
+
+  // ====== I did a thing: post builder ======
+  (function(){
+    var card=document.getElementById('win-card'); if(!card) return;
+    var GROUP="https://www.facebook.com/share/g/17vJJT11QF/";
+    var mode='quick';
+    var f={what:'w-what',hard:'w-hard',helped:'w-helped',feel:'w-feel',tell:'w-tell',link:'w-link'};
+    Object.keys(f).forEach(function(k){ f[k]=document.getElementById(f[k]); });
+    var prev=document.getElementById('w-preview'), sent=document.getElementById('w-sent');
+    card.setAttribute('data-mode',mode);
+    function v(el){ return (el.value||'').trim(); }
+    function build(){
+      var what=v(f.what); if(!what) return '';
+      what=what.replace(/^i did a thing[:!.\s-]*/i,'');
+      var out='I did a thing! '+what;
+      if(!/[.!?]$/.test(out)) out+='.';
+      if(mode==='story'){
+        var parts=[['What made it hard',f.hard],['What helped',f.helped],['How I feel now',f.feel],['If you are facing the same thing',f.tell]];
+        parts.forEach(function(p){ var t=v(p[1]); if(t) out+='\n\n'+p[0]+': '+t; });
+        var l=v(f.link); if(l) out+='\n\nSee it here: '+l;
+      }
+      return out+'\n\n#IDidAThing';
+    }
+    function render(){
+      var t=build();
+      if(t){ prev.textContent=t; } else { prev.innerHTML='<span class="ph">Start typing and your post will appear here.</span>'; }
+      sent.classList.remove('show');
+    }
+    Object.keys(f).forEach(function(k){ f[k].addEventListener('input',render); });
+    card.querySelectorAll('[data-mode]').forEach(function(tab){
+      tab.addEventListener('click',function(){
+        mode=tab.getAttribute('data-mode'); card.setAttribute('data-mode',mode);
+        card.querySelectorAll('[data-mode][role="tab"]').forEach(function(x){ x.setAttribute('aria-selected', x===tab); });
+        render();
+      });
+    });
+    document.querySelectorAll('.chip').forEach(function(c){
+      c.addEventListener('click',function(){
+        f.what.value=c.textContent+'.'; render();
+        card.scrollIntoView({behavior:'smooth',block:'start'});
+        setTimeout(function(){ f.what.focus({preventScroll:true}); var n=f.what.value.length; f.what.setSelectionRange(n,n); },450);
+      });
+    });
+    function copy(text){
+      if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(text); }
+      return new Promise(function(res,rej){
+        var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy') ? res() : rej(); }catch(e){ rej(e); } finally{ document.body.removeChild(ta); }
+      });
+    }
+    document.getElementById('win-form').addEventListener('submit',function(e){
+      e.preventDefault();
+      var t=build();
+      if(!t){ f.what.focus(); sent.textContent='Start with what you did. One line is plenty.'; sent.classList.add('show'); return; }
+      copy(t).then(function(){
+        sent.innerHTML='<b>Copied.</b> In the group, start a new post, paste, and add a photo, video, or file if you have one. <a href="'+GROUP+'" target="_blank" rel="noopener">Open the group again</a>';
+      },function(){
+        sent.innerHTML='Your post is ready. Select the text in the preview above, copy it, and paste it into a new post in the group. <a href="'+GROUP+'" target="_blank" rel="noopener">Open the group</a>';
+      }).then(function(){ sent.classList.add('show'); window.open(GROUP,'_blank','noopener'); });
     });
   })();
 })();
