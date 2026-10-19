@@ -1,6 +1,6 @@
 // Keeps the FIO Back Office working without internet.
-const CACHE="fio-backoffice-v1";
-self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(["./"])).then(()=>self.skipWaiting()))});
+const CACHE="fio-backoffice-v2";
+self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(["./","./msal-browser.min.js"])).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",e=>{
   const req=e.request;if(req.method!=="GET")return;
@@ -11,6 +11,7 @@ self.addEventListener("fetch",e=>{
     return;
   }
   if(url.origin!==location.origin)return;
+  if(url.pathname.endsWith("msal-browser.min.js")){e.respondWith(caches.match(req).then(h=>h||fetch(req)));return}
   e.respondWith(fetch(req).then(r=>{if(r.ok){const cp=r.clone();caches.open(CACHE).then(c=>c.put(req,cp))}return r})
     .catch(()=>caches.match(req,{ignoreSearch:true}).then(h=>h||caches.match("./"))));
 });
