@@ -1,8 +1,8 @@
 // Keeps the Pricing Planner and Event Tracker working without internet.
-const CACHE="fio-backdoor-v1";
-const PAGES=["./event/","./plan/"];
+const CACHE="fio-backdoor-v2";
+const PAGES=["./event/","./plan/","./inventory/"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(PAGES)).then(()=>self.skipWaiting()))});
-self.addEventListener("activate",e=>{e.waitUntil(self.clients.claim())});
+self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim()))});
 self.addEventListener("fetch",e=>{
   const req=e.request;if(req.method!=="GET")return;
   const url=new URL(req.url);
