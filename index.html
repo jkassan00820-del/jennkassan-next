@@ -298,7 +298,11 @@ nav a:hover{color:var(--earth)}
 @media (max-width:760px){.extras{grid-template-columns:1fr;gap:1.6rem}}
 .extras h3{font-size:1.5rem;color:var(--forest)}
 .extras p{margin:.4rem 0 0;font-size:.95rem;color:var(--muted)}
-.book-close{text-align:center;margin-top:3.5rem}
+.buy-note{font-size:.92rem;color:var(--muted);font-style:italic;margin:.9rem 0 0;max-width:46ch}
+.buy-note-sm{font-size:.82rem;text-align:center;margin:.2rem auto 0;max-width:30ch}
+.bh-cta + .buy-note{margin-top:.8rem}
+@media (max-width:860px){.bh-cta + .buy-note{margin-inline:auto;text-align:center}}
+.book-close{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:3.5rem}
 .bc-line{font-family:var(--serif-head);font-weight:600;font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--forest);margin:0 0 1.2rem}
 /* FIO intro (second fold) */
 .fio-intro{border-top:1px solid var(--line);padding:4.5rem 0 3rem}
@@ -548,7 +552,7 @@ footer a:hover{color:var(--gold)}
         <li><a href="#together">Community</a></li>
         <li><a href="#did">I Did a Thing</a></li>
         <li><a href="#about">About Jenn</a></li>
-        <li><a class="nav-cta" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Get the book</a></li>
+        <li><a class="nav-cta" href="#book">Get the book</a></li>
       </ul>
     </nav>
   </div>
@@ -578,9 +582,11 @@ footer a:hover{color:var(--gold)}
       <h2 id="fhb-h">Chasing Chaos, <em>Finding Home</em></h2>
       <p class="fhb-desc">A Collection of Memories, Poems, and Stories</p>
       <div class="fhb-cta">
-        <a class="btn btn-forest" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn btn-forest" href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a>
+        <a class="btn btn-line" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
         <a class="fhb-more" href="#book">About the book</a>
       </div>
+      <p class="buy-note buy-note-sm">Ordering direct sends more of each sale to me. Amazon works too.</p>
       <a class="fhb-journal" href="#journal"><img src="assets/journal-cover.webp" alt="" width="520" height="817"><span class="fj-text"><span class="fj-new">New</span> The companion journal, <em>Finding Home in the Chaos</em>, is out now.<span class="fj-link">See the journal</span></span></a>
     </aside>
   </div>
@@ -621,9 +627,11 @@ footer a:hover{color:var(--gold)}
       <p class="bh-quote">Some journeys don't begin with a destination. They begin with a memory.</p>
       <p class="bh-body">Memories, poems, and stories about losing my mother at three years old, and the long, winding path from chaos to home: through grief, motherhood, and finally understanding my own mind.</p>
       <div class="bh-cta">
-        <a class="btn btn-forest btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn btn-forest btn-lg" href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a>
+        <a class="btn btn-line btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
         <a class="btn btn-line btn-lg" href="#inside">Look inside</a>
       </div>
+      <p class="buy-note">Ordering direct means more of every sale comes to me. Amazon works just as well, so pick whatever is easiest for you.</p>
       <p class="bh-sc"><a href="#southern-chaos">How this book brought me back to Southern Chaos</a></p>
     </div>
     <figure class="bh-cover"><img class="cover-img" src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home by Jenn Kassan: a campsite at sunset with an RV by a lake, a campfire, a Figuring It Out journal, and a stack of books labeled Courage, Grace, Growth, Gratitude" width="640" height="910" loading="lazy"></figure>
@@ -666,7 +674,8 @@ footer a:hover{color:var(--gold)}
       <p class="sc-quote">The chaos connected us. The stories bring us together.</p>
       <div class="sc-cta">
         <a class="btn btn-gold" href="https://www.facebook.com/southernchaosband" target="_blank" rel="noopener">Follow Southern Chaos</a>
-        <a class="btn btn-cream-line" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Get the book</a>
+        <a class="btn btn-cream-line" href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a>
+        <a class="btn btn-cream-line" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
       </div>
       <p class="sc-invite">Has the book connected you with someone? <a class="community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Share that story in the group.</a></p>
     </div>
@@ -692,8 +701,10 @@ footer a:hover{color:var(--gold)}
       <div><h3>A journal companion</h3><p><em>Finding Home in the Chaos</em> gives you room to write your own story alongside mine. It's out now. <a href="#journal">Try a few prompts</a>.</p></div>
     </div>
     <div class="book-close">
-      <a class="btn btn-forest btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
+      <a class="btn btn-forest btn-lg" href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a>
+      <a class="btn btn-line btn-lg" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
     </div>
+    <p class="buy-note" style="text-align:center;margin-inline:auto">Ordering direct sends more of each sale my way. Amazon is always welcome too.</p>
   </div>
 </section>
 
@@ -709,7 +720,8 @@ footer a:hover{color:var(--gold)}
     <div class="media-readers">
       <p class="mr-line">The rest are waiting for readers. You'll find the QR codes inside the book.</p>
       <div class="mr-cta">
-        <a class="btn btn-forest" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn btn-forest" href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a>
+        <a class="btn btn-line" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
         <a class="btn btn-line" href="listen.html">Already a reader? Open the readers' page</a>
       </div>
     </div>
@@ -955,7 +967,8 @@ footer a:hover{color:var(--gold)}
       <p>I don't have all the answers. I just keep figuring it out. And I believe you can too.</p>
       <div class="sign">Let's figure it out together.</div>
       <div class="about-cta">
-        <a class="btn btn-forest" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy the book</a>
+        <a class="btn btn-forest" href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a>
+        <a class="btn btn-line" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
         <a class="btn btn-line" href="https://www.amazon.com/stores/Jenn-Kassan/author/B0HHZ6BMRG" target="_blank" rel="noopener">My Amazon author page</a>
       </div>
     </div>
@@ -993,7 +1006,8 @@ footer a:hover{color:var(--gold)}
           <li><a href="#did">I Did a Thing</a></li>
           <li><a href="#book">The Book</a></li>
           <li><a href="#southern-chaos">Southern Chaos</a></li>
-          <li><a href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Get the book</a></li>
+          <li><a href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order the book direct</a></li>
+          <li><a href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Book on Amazon</a></li>
           <li><a href="#journal">Journal Companion</a></li>
           <li><a class="journal-buy" href="https://a.co/d/0acHhii7" target="_blank" rel="noopener">Get the journal</a></li>
           <li><a href="#about">About Jenn</a></li>
