@@ -530,7 +530,11 @@ footer a:hover{color:var(--gold)}
 .copy{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:#E8DDC8}
 .copy .script{font-size:1.5rem;color:var(--gold)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-footer .owner-link{color:#E8DDC8;opacity:.6;text-decoration:none;white-space:nowrap}footer .owner-link:hover,footer .owner-link:focus-visible{opacity:1;color:var(--gold)}footer .owner-link svg{vertical-align:-1px}
+.head-in nav{margin-left:auto}
+.owner-btn{display:inline-flex;align-items:center;gap:.4rem;flex:0 0 auto;text-decoration:none;color:var(--forest);border:1px solid var(--line);border-radius:999px;padding:.4rem .8rem;font-size:.85rem;background:transparent;transition:background .2s,color .2s,border-color .2s}
+.owner-btn:hover,.owner-btn:focus-visible{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+@media (max-width:860px){.menu-btn{margin-left:auto}.owner-btn{padding:.45rem .6rem}.owner-btn span{display:none}}
+@media (max-width:440px){.brand b{white-space:nowrap;font-size:1.02rem;letter-spacing:.03em}.brand img{width:34px}.head-in{gap:.6rem}}
 </style>
 <style>
 .readers-hero{padding:4rem 0 1rem;background:linear-gradient(180deg, color-mix(in srgb,var(--parchment) 35%,var(--cream)) 0%, var(--paper) 100%)}
@@ -557,6 +561,7 @@ footer .owner-link{color:#E8DDC8;opacity:.6;text-decoration:none;white-space:now
         <li><a class="nav-cta" href="index.html#book">Get the book</a></li>
       </ul>
     </nav>
+    <a class="owner-btn" href="backdoor/" rel="nofollow" aria-label="Owner sign-in"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg><span>Sign in</span></a>
   </div>
 </header>
 
@@ -609,7 +614,7 @@ footer .owner-link{color:#E8DDC8;opacity:.6;text-decoration:none;white-space:now
     </div>
     <p class="care"><strong style="color:#F8F4EC">A note of care.</strong> This is a community for encouragement and shared stories, not professional or emergency support, and messages sent through this site aren't monitored regularly. If you're in crisis or thinking about harming yourself, please call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline, US) or call <strong>911</strong>. Outside the US, contact your local emergency number.</p>
     <div class="copy">
-      <span>© <span id="yr">2026</span> Figuring It Out · Jenn Kassan. All rights reserved. · <a class="owner-link" href="backdoor/" rel="nofollow"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg> Owner sign-in</a></span>
+      <span>© <span id="yr">2026</span> Figuring It Out · Jenn Kassan. All rights reserved.</span>
       <span class="script">Just keep moving.</span>
     </div>
   </div>
