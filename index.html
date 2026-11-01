@@ -550,7 +550,7 @@ footer a:hover{color:var(--gold)}
 .nb-kicker{margin:0;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.2rem;color:var(--gold)}
 .nb-big{margin:0;font-family:var(--serif-head);font-weight:700;font-size:clamp(1.7rem,4.6vw,3rem);line-height:1.1;max-width:22ch;text-wrap:balance}
 .nb-big em{color:var(--gold);font-style:italic}
-.nb-num{display:inline-block;font-size:1.45em;color:var(--gold);margin-right:.15em;line-height:.9;animation:nbpop 1.2s ease-out 1}
+.nb-num{display:inline-block;font-family:var(--serif-body);font-weight:700;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1;font-size:1.2em;letter-spacing:-.02em;color:var(--gold);margin-right:.15em;line-height:.9;animation:nbpop 1.2s ease-out 1}
 @keyframes nbpop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){.nb-num{animation:none}}
 .nb-more{list-style:none;margin:.3rem 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;font-size:1rem;color:#E8DDC8}
@@ -562,6 +562,8 @@ footer a:hover{color:var(--gold)}
 .fhb-badge b,.bh-badge b{color:var(--gold)}
 .fhb-badge{position:relative}
 .bh-badge .stars{margin-left:.1rem}
+.nb-more b,.fhb-badge b,.bh-badge b,.nb-big,.nb-more{font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1}
+.nb-more b,.fhb-badge b,.bh-badge b{font-family:var(--serif-body)}
 </style>
 </head>
 <body id="top">
