@@ -541,6 +541,27 @@ footer a:hover{color:var(--gold)}
 .owner-btn:hover,.owner-btn:focus-visible{background:var(--forest);color:var(--cream);border-color:var(--forest)}
 @media (max-width:860px){.menu-btn{margin-left:auto}.owner-btn{padding:.45rem .6rem}.owner-btn span{display:none}}
 @media (max-width:440px){.brand b{white-space:nowrap;font-size:1.02rem;letter-spacing:.03em}.brand img{width:34px}.head-in{gap:.6rem}}
+
+/* ---------- #1 news ---------- */
+.news-banner{background:var(--forest);color:var(--cream);text-align:center;padding:2.2rem 0 2rem;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
+.news-banner::before,.news-banner::after{content:"";position:absolute;top:50%;width:260px;height:260px;border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);border-radius:50%;transform:translateY(-50%)}
+.news-banner::before{left:-120px}.news-banner::after{right:-120px}
+.nb-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.nb-kicker{margin:0;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.2rem;color:var(--gold)}
+.nb-big{margin:0;font-family:var(--serif-head);font-weight:700;font-size:clamp(1.7rem,4.6vw,3rem);line-height:1.1;max-width:22ch;text-wrap:balance}
+.nb-big em{color:var(--gold);font-style:italic}
+.nb-num{display:inline-block;font-size:1.45em;color:var(--gold);margin-right:.15em;line-height:.9;animation:nbpop 1.2s ease-out 1}
+@keyframes nbpop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.nb-num{animation:none}}
+.nb-more{list-style:none;margin:.3rem 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;font-size:1rem;color:#E8DDC8}
+.nb-more b{color:var(--cream)}
+.stars{color:var(--gold);letter-spacing:.08em}
+.nb-cta{margin-top:.6rem}
+.nb-small{margin:.3rem 0 0;font-size:.75rem;opacity:.7}
+.fhb-badge,.bh-badge{display:inline-block;margin:0 0 .8rem;background:var(--forest);color:var(--cream);border-radius:999px;padding:.35rem .9rem;font-size:.85rem;letter-spacing:.02em}
+.fhb-badge b,.bh-badge b{color:var(--gold)}
+.fhb-badge{position:relative}
+.bh-badge .stars{margin-left:.1rem}
 </style>
 </head>
 <body id="top">
@@ -565,6 +586,19 @@ footer a:hover{color:var(--gold)}
 </header>
 
 <main>
+<section class="news-banner" aria-label="Book news">
+  <div class="wrap nb-in">
+    <p class="nb-kicker">Thank you, readers!</p>
+    <p class="nb-big"><span class="nb-num">#1</span> on Amazon Kindle in <em>Survival Biographies &amp; Memoirs</em></p>
+    <ul class="nb-more">
+      <li><b>#2</b> in Personal Transformation</li>
+      <li><b>#3</b> in Memoirs</li>
+      <li><span class="stars" aria-hidden="true">★★★★★</span> <b>5.0</b> from 22 reviews</li>
+    </ul>
+    <div class="nb-cta"><a class="btn btn-gold" href="#book">Get your copy</a></div>
+    <p class="nb-small">Amazon Kindle Store rankings, November 1, 2026.</p>
+  </div>
+</section>
 <!-- FIO HERO -->
 <section class="hero fio-hero" id="fio" aria-labelledby="fio-h">
   <img class="decor leaves" src="assets/leaves.webp" alt="">
@@ -583,6 +617,7 @@ footer a:hover{color:var(--gold)}
       </div>
     </div>
     <aside class="fh-book" aria-labelledby="fhb-h">
+      <p class="fhb-badge"><b>#1</b> Kindle bestseller · Survival Memoirs</p>
       <p class="fhb-kicker">The first book from Figuring It Out</p>
       <a class="fhb-cover" href="#book"><img src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home by Jenn Kassan: a campsite at sunset with an RV by a lake, a campfire, a Figuring It Out journal, and a stack of books labeled Courage, Grace, Growth, Gratitude" width="640" height="910"></a>
       <h2 id="fhb-h">Chasing Chaos, <em>Finding Home</em></h2>
@@ -629,6 +664,7 @@ footer a:hover{color:var(--gold)}
   <div class="wrap bh-grid">
     <div class="bh-text">
       <p class="bh-kicker">The book</p>
+      <p class="bh-badge"><b>#1</b> on Amazon Kindle in Survival Biographies &amp; Memoirs · <span class="stars" aria-hidden="true">★★★★★</span> 5.0 (22 reviews)</p>
       <h2 class="bh-title" id="bh-h">Chasing Chaos, <em>Finding Home</em></h2>
       <p class="bh-desc">A Collection of Memories, Poems, and Stories</p>
       <p class="bh-quote">Some journeys don't begin with a destination. They begin with a memory.</p>
