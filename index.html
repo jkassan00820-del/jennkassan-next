@@ -379,7 +379,7 @@ nav a:hover{color:var(--earth)}
 
 /* ---------- FIO hero (brand first, book featured) ---------- */
 .fio-hero{padding:3.5rem 0 4.5rem;background:linear-gradient(180deg,var(--cream) 0%,color-mix(in srgb,var(--parchment) 22%,var(--cream)) 100%)}
-.fh-grid{position:relative;display:grid;grid-template-columns:1.35fr .85fr;gap:3.5rem;align-items:center}
+.fh-grid{position:relative;display:grid;grid-template-columns:1fr;gap:3.5rem;align-items:center;justify-items:center}
 .fh-grid>*{min-width:0}
 .fio-hero .hero-logo{width:clamp(150px,18vw,220px)}
 .fio-hero h1{font-size:clamp(2rem,8.4vw,3.5rem)}
@@ -570,7 +570,7 @@ footer a:hover{color:var(--gold)}
 
 /* ---------- hero path chooser ---------- */
 .hp-lead{margin:1.6rem 0 .7rem;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.15rem;color:var(--earth)}
-.hero-paths{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;width:100%;max-width:560px;margin-inline:auto}
+.hero-paths{display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;max-width:640px;margin-inline:auto}
 .hp{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.25rem;text-align:left;text-decoration:none;padding:1rem 2.4rem 1rem 1.1rem;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s}
 .hp:hover,.hp:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(33,69,52,.45);border-color:var(--gold)}
 .hp-which{font-family:var(--serif-head);font-style:italic;font-weight:700;font-size:1.6rem;line-height:1}
@@ -640,20 +640,6 @@ footer a:hover{color:var(--gold)}
       </div>
       <a class="hp-more" href="#philosophy">Explore Figuring It Out</a>
     </div>
-    <aside class="fh-book" aria-labelledby="fhb-h">
-      <p class="fhb-badge"><b>#1</b> Kindle bestseller · Survival Memoirs</p>
-      <p class="fhb-kicker">The first book from Figuring It Out</p>
-      <a class="fhb-cover" href="#book"><img src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home by Jenn Kassan: a campsite at sunset with an RV by a lake, a campfire, a Figuring It Out journal, and a stack of books labeled Courage, Grace, Growth, Gratitude" width="640" height="910"></a>
-      <h2 id="fhb-h">Chasing Chaos, <em>Finding Home</em></h2>
-      <p class="fhb-desc">A Collection of Memories, Poems, and Stories</p>
-      <div class="fhb-cta">
-        <a class="btn btn-forest" href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a>
-        <a class="btn btn-line" href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">Buy on Amazon</a>
-        <a class="fhb-more" href="#book">About the book</a>
-      </div>
-      <p class="buy-note buy-note-sm">Ordering direct sends more of each sale to me. Amazon works too.</p>
-      <a class="fhb-journal" href="#journal"><img src="assets/journal-cover.webp" alt="" width="520" height="817"><span class="fj-text"><span class="fj-new">New</span> The companion journal, <em>Finding Home in the Chaos</em>, is out now.<span class="fj-link">See the journal</span></span></a>
-    </aside>
   </div>
 </section>
 
