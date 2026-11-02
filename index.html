@@ -549,6 +549,12 @@ footer a:hover{color:var(--gold)}
 .news-banner{background:var(--forest);color:var(--cream);text-align:center;padding:2.2rem 0 2rem;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
 .news-banner::before,.news-banner::after{content:"";position:absolute;top:50%;width:260px;height:260px;border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);border-radius:50%;transform:translateY(-50%)}
 .news-banner::before{left:-120px}.news-banner::after{right:-120px}
+.nb-row{position:relative;display:flex;align-items:center;justify-content:center;gap:2.6rem}
+.nb-cover{flex:0 0 auto;display:block;transform:rotate(-3deg);transition:transform .25s}
+.nb-cover:hover,.nb-cover:focus-visible{transform:rotate(0) scale(1.03)}
+.nb-cover img{display:block;width:140px;height:auto;border-radius:3px;box-shadow:0 14px 30px rgba(0,0,0,.4),0 0 0 1px color-mix(in srgb,var(--gold) 55%,transparent)}
+@media (max-width:700px){.nb-row{flex-direction:column;gap:1.2rem}.nb-cover img{width:96px}}
+@media (prefers-reduced-motion:reduce){.nb-cover{transition:none}}
 .nb-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:.6rem}
 .nb-kicker{margin:0;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.2rem;color:var(--gold)}
 .nb-big{margin:0;font-family:var(--serif-head);font-weight:700;font-size:clamp(1.7rem,4.6vw,3rem);line-height:1.1;max-width:22ch;text-wrap:balance}
@@ -609,7 +615,9 @@ footer a:hover{color:var(--gold)}
 
 <main>
 <section class="news-banner" aria-label="Book news">
-  <div class="wrap nb-in">
+  <div class="wrap nb-row">
+  <a class="nb-cover" href="#book" aria-label="See the book"><img src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home" width="140" height="210" loading="eager"></a>
+  <div class="nb-in">
     <p class="nb-kicker">Thank you, readers!</p>
     <p class="nb-big"><span class="nb-num">#1</span> on Amazon Kindle in <em>Survival Biographies &amp; Memoirs</em></p>
     <ul class="nb-more">
@@ -619,6 +627,7 @@ footer a:hover{color:var(--gold)}
     </ul>
     <div class="nb-cta"><a class="btn btn-gold" href="#book">Get your copy</a></div>
     <p class="nb-small">Amazon Kindle Store rankings, November 1, 2026.</p>
+  </div>
   </div>
 </section>
 <!-- FIO HERO -->
