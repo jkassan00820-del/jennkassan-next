@@ -63,10 +63,12 @@ nav ul{list-style:none;display:flex;gap:1.6rem;margin:0;padding:0}
 nav a{text-decoration:none;color:var(--ink);font-size:.95rem;white-space:nowrap}
 .brand b{white-space:nowrap}
 .brand{flex-shrink:0}
-@media (min-width:1061px) and (max-width:1240px){nav ul{gap:.95rem}nav a{font-size:.86rem}.brand b{font-size:1.05rem}.owner-btn{padding:.4rem .6rem}.owner-btn span{display:none}}
+
 nav a:hover{color:var(--earth)}
+nav a[aria-current="page"]{color:var(--earth);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px}
+
 .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:.4rem .7rem;font:inherit;font-size:.9rem;cursor:pointer}
-@media (max-width:1060px){
+@media (max-width:860px){
   .menu-btn{display:block}
   nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);display:none}
   nav.open{display:block}
@@ -285,7 +287,7 @@ nav a:hover{color:var(--earth)}
 }
 .nav-cta{background:var(--forest);color:var(--cream)!important;padding:.45rem 1rem;border-radius:3px}
 .nav-cta:hover{background:var(--pine)}
-@media (max-width:1060px){.nav-cta{display:inline-block!important;margin-top:.6rem;border-bottom:0!important}}
+@media (max-width:860px){.nav-cta{display:inline-block!important;margin-top:.6rem;border-bottom:0!important}}
 /* inside the book */
 .book-intro{max-width:60ch;margin:1rem auto 0}
 .book .center p{margin-inline:auto}
@@ -542,7 +544,7 @@ footer a:hover{color:var(--gold)}
 .head-in nav{margin-left:auto}
 .owner-btn{display:inline-flex;align-items:center;gap:.4rem;flex:0 0 auto;text-decoration:none;color:var(--forest);border:1px solid var(--line);border-radius:999px;padding:.4rem .8rem;font-size:.85rem;background:transparent;transition:background .2s,color .2s,border-color .2s}
 .owner-btn:hover,.owner-btn:focus-visible{background:var(--forest);color:var(--cream);border-color:var(--forest)}
-@media (max-width:1060px){.menu-btn{margin-left:auto}.owner-btn{padding:.45rem .6rem}.owner-btn span{display:none}}
+@media (max-width:860px){.menu-btn{margin-left:auto}.owner-btn{padding:.45rem .6rem}.owner-btn span{display:none}}
 @media (max-width:440px){.brand b{white-space:nowrap;font-size:1.02rem;letter-spacing:.03em}.brand img{width:34px}.head-in{gap:.6rem}}
 
 /* ---------- #1 news ---------- */
@@ -589,11 +591,16 @@ footer a:hover{color:var(--gold)}
 .hp-more{display:inline-block;margin-top:.9rem;font-size:.92rem;color:var(--earth)}
 @media (max-width:480px){.hero-paths{grid-template-columns:1fr}}
 .path{scroll-margin-top:90px}
-.crumb{border-bottom:1px solid var(--line);background:var(--paper);font-size:.85rem;padding:.65rem 0}
-.crumb a{color:var(--earth)}
-.crumb b{color:var(--forest)}
-.crumb-sub{color:var(--muted);font-style:italic;margin-left:.4rem}
-@media (max-width:520px){.crumb-sub{display:none}}
+.subnav{position:sticky;top:68px;z-index:19;background:var(--paper);border-bottom:1px solid var(--line)}
+.sub-in{display:flex;align-items:center;gap:1.4rem;overflow-x:auto;scrollbar-width:none;padding-block:.55rem;white-space:nowrap}
+.sub-in::-webkit-scrollbar{display:none}
+.subnav a{text-decoration:none;color:var(--ink);font-size:.88rem}
+.subnav a:hover,.subnav a:focus-visible{color:var(--earth)}
+.subnav a.on{color:var(--earth);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:5px}
+.sub-home{color:var(--earth)!important;font-size:1rem!important}
+.sub-label{font-family:var(--serif-head);font-style:italic;font-weight:700;font-size:1.15rem;color:var(--earth);padding-right:.4rem;border-right:1px solid var(--line);margin-right:-.2rem;padding-right:1rem}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 118px)}
+@media (max-width:520px){.sub-in{gap:1.05rem}.sub-label{display:none}}
 </style>
 </head>
 <body id="top">
@@ -604,13 +611,10 @@ footer a:hover{color:var(--gold)}
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" aria-label="Main">
       <ul>
-        <li><a href="#book">The Book</a></li>
-        <li><a href="#listen">Listen</a></li>
-        <li><a href="#journal">Journal</a></li>
-        <li><a href="#together">Community</a></li>
-        <li><a href="#did">I Did a Thing</a></li>
+        <li><a href="personal.html" aria-current="page">Personal</a></li>
+        <li><a href="https://claude.ai/artifact/2W268EotvdfLGiLEhnKpeN" target="_blank" rel="noopener">Professional</a></li>
+        <li><a href="index.html#philosophy">How I Figure It Out</a></li>
         <li><a href="index.html#about">About Jenn</a></li>
-        <li><a class="nav-ods" href="https://claude.ai/artifact/2W268EotvdfLGiLEhnKpeN" target="_blank" rel="noopener">ODS Hourglass</a></li>
       </ul>
     </nav>
     <a class="owner-btn" href="backdoor/" rel="nofollow" aria-label="Owner sign-in"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z"/></svg><span>Sign in</span></a>
@@ -618,8 +622,12 @@ footer a:hover{color:var(--gold)}
 </header>
 
 <main>
-<!-- PERSONAL INTRO -->
-<div class="crumb"><div class="wrap"><a href="index.html">Figuring It Out</a> <span aria-hidden="true">›</span> <b>Personal</b> <span class="crumb-sub">The book, stories &amp; community</span></div></div>
+<!-- PERSONAL SUB-NAV -->
+<div class="subnav" role="navigation" aria-label="Personal page sections"><div class="wrap sub-in">
+  <a class="sub-home" href="index.html" aria-label="Back to Figuring It Out home">&larr;</a>
+  <span class="sub-label">Personal</span>
+  <a href="#book">The Book</a><a href="#inside">Inside</a><a href="#listen">Listen</a><a href="#journal">Journal</a><a href="#together">Community</a><a href="#did">I Did a Thing</a>
+</div></div>
 
 <!-- BOOK FEATURE -->
 <section class="book-hero" id="book" aria-labelledby="bh-h">
@@ -1146,6 +1154,14 @@ footer a:hover{color:var(--gold)}
   renderJ();
   }
 })();
+</script>
+<script>
+(function(){var links=[].slice.call(document.querySelectorAll('.subnav a[href^="#"]'));
+var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});var cur=-1,tick=false;
+function upd(){tick=false;var i=-1;secs.forEach(function(el,k){if(el&&el.getBoundingClientRect().top<=150)i=k});
+if(i===cur)return;cur=i;links.forEach(function(a,k){a.classList.toggle('on',k===i)});
+if(i>-1){var a=links[i],box=a.parentNode;box.scrollLeft=Math.max(0,a.offsetLeft-box.clientWidth/2+a.offsetWidth/2);}}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('load',upd);upd();})();
 </script>
 </body>
 </html>
