@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Figuring It Out//jennkassan.com//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:daniella-20261108@jennkassan.com
+DTSTAMP:20261103T180000Z
+DTSTART;TZID=America/New_York:20261108T100000
+DTEND;TZID=America/New_York:20261108T130000
+SUMMARY:Daniella Strong Benefit (Jenn Kassan with signed books)
+LOCATION:VFW\, Palm Coast\, FL
+DESCRIPTION:Community benefit hosted by 5&Why with vendors and raffle. Info: info@5andwhy.com\, 904-775-3736.
+URL:https://www.facebook.com/events/s/daniella-strong-benefit/1448562750761576/
+END:VEVENT
+END:VCALENDAR

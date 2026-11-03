@@ -611,6 +611,22 @@ footer a:hover{color:var(--gold)}
 @media (max-width:480px){.hero-paths{grid-template-columns:1fr}}
 .path{scroll-margin-top:90px}
 
+/* ---------- meet me in person strip ---------- */
+.meet{padding:1.6rem 0;background:var(--parchment);border-bottom:1px solid color-mix(in srgb,var(--gold) 55%,transparent);box-shadow:inset 0 6px 14px -10px rgba(52,37,19,.35)}
+.meet-in{display:flex;align-items:center;gap:1.6rem 2rem;flex-wrap:wrap;justify-content:center}
+.meet-head{display:flex;align-items:center;gap:.8rem}
+.meet-pin{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--forest);color:var(--gold);flex:0 0 auto;animation:meetpulse 2.4s ease-in-out infinite}
+@keyframes meetpulse{0%,100%{box-shadow:0 0 0 0 rgba(200,157,74,.55)}50%{box-shadow:0 0 0 9px rgba(200,157,74,0)}}
+@media (prefers-reduced-motion:reduce){.meet-pin{animation:none}}
+.meet-head h2{margin:0;font-family:var(--serif-head);font-size:clamp(1.6rem,3vw,2.1rem);line-height:1;color:var(--forest)}
+.meet-head p{margin:.25rem 0 0;font-style:italic;color:var(--espresso);font-size:.95rem}
+.meet-dates{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.meet-dates a{display:flex;flex-direction:column;align-items:center;text-decoration:none;background:var(--paper);border:1px solid color-mix(in srgb,var(--gold) 60%,transparent);border-radius:8px;padding:.5rem .9rem;min-width:118px;transition:transform .2s,box-shadow .2s}
+.meet-dates a:hover,.meet-dates a:focus-visible{transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(52,37,19,.5)}
+.meet-dates b{font-family:var(--serif-body);font-size:1.15rem;color:var(--forest);font-variant-numeric:lining-nums}
+.meet-dates span{font-size:.75rem;color:var(--earth);text-align:center;line-height:1.3;max-width:15ch}
+.meet-btn{white-space:nowrap}
+@media (max-width:640px){.meet-dates a{min-width:0;padding:.45rem .7rem}.meet-head{width:100%;justify-content:center;text-align:left}}
 /* ---------- book signings ---------- */
 .events{background:linear-gradient(180deg,color-mix(in srgb,var(--parchment) 35%,var(--bg)),var(--bg))}
 .ev-kicker{margin:0 0 .3rem;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.25rem;color:var(--earth)}
@@ -639,7 +655,7 @@ footer a:hover{color:var(--gold)}
 .nb-events a{color:var(--gold);font-weight:700;text-underline-offset:4px}
 @media (max-width:720px){.ev{grid-template-columns:1fr;padding:1.2rem}.ev-flyer{max-width:300px;margin-inline:auto}}
 </style>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at the Southern Chaos gig", "startDate": "2026-11-27T20:00:00-05:00", "endDate": "2026-11-27T23:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Mile Marker 803 Clubhouse", "address": {"@type": "PostalAddress", "streetAddress": "European Village", "addressLocality": "Palm Coast", "addressRegion": "FL", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-southern-chaos.webp", "description": "Live music from Southern Chaos and a book signing with Jenn Kassan, author of Chasing Chaos, Finding Home.", "performer": [{"@type": "MusicGroup", "name": "Southern Chaos"}, {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}], "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-08T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-09T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Event", "name": "Daniella Strong Benefit", "startDate": "2026-11-08T10:00:00-05:00", "endDate": "2026-11-08T13:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "VFW Palm Coast", "address": {"@type": "PostalAddress", "addressLocality": "Palm Coast", "addressRegion": "FL", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-daniella-strong.webp", "description": "Community benefit with vendors and raffle, hosted by 5&Why. Jenn Kassan will be there with signed copies of Chasing Chaos, Finding Home.", "organizer": {"@type": "Organization", "name": "5&Why", "email": "info@5andwhy.com"}},{"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at the Southern Chaos gig", "startDate": "2026-11-27T20:00:00-05:00", "endDate": "2026-11-27T23:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Mile Marker 803 Clubhouse", "address": {"@type": "PostalAddress", "streetAddress": "European Village", "addressLocality": "Palm Coast", "addressRegion": "FL", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-southern-chaos.webp", "description": "Live music from Southern Chaos and a book signing with Jenn Kassan, author of Chasing Chaos, Finding Home.", "performer": [{"@type": "MusicGroup", "name": "Southern Chaos"}, {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}], "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-08T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-09T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}]</script>
 </head>
 <body id="top">
 
@@ -672,11 +688,27 @@ footer a:hover{color:var(--gold)}
       <li><span class="stars" aria-hidden="true">★★★★★</span> <b>5.0</b> from 22 reviews</li>
     </ul>
     <div class="nb-cta"><a class="btn btn-gold" href="personal.html#book">See the book</a></div>
-    <p class="nb-events">Meet me in person: book signings Nov 27, Dec 8 &amp; Dec 9 in Palm Coast. <a href="#events">See the dates</a></p>
     <p class="nb-small">Amazon Kindle Store rankings, November 1, 2026.</p>
   </div>
   </div>
 </section>
+<!-- MEET ME IN PERSON -->
+<section class="meet" aria-labelledby="meet-h">
+  <div class="wrap meet-in">
+    <div class="meet-head">
+      <span class="meet-pin" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+      <div><h2 id="meet-h">Meet me in person</h2><p>Signed books, good company, Palm Coast.</p></div>
+    </div>
+    <ul class="meet-dates">
+      <li data-end="2026-11-08T13:00:00-05:00"><a href="#events"><b>Nov 8</b><span>Daniella Strong Benefit</span></a></li>
+      <li data-end="2026-11-27T23:00:00-05:00"><a href="#events"><b>Nov 27</b><span>Southern Chaos · Mile Marker 803</span></a></li>
+      <li data-end="2026-12-08T21:00:00-05:00"><a href="#events"><b>Dec 8</b><span>Cue Note Billiards</span></a></li>
+      <li data-end="2026-12-09T21:00:00-05:00"><a href="#events"><b>Dec 9</b><span>Cue Note Billiards</span></a></li>
+    </ul>
+    <a class="btn btn-gold meet-btn" href="#events">See all the signings</a>
+  </div>
+</section>
+
 <!-- FIO HERO -->
 <section class="hero fio-hero" id="fio" aria-labelledby="fio-h">
   <img class="decor leaves" src="assets/leaves.webp" alt="">
@@ -704,10 +736,22 @@ footer a:hover{color:var(--gold)}
   <div class="wrap">
     <div class="center">
       <p class="ev-kicker">Come say hi</p>
-      <h2 id="events-h">Upcoming Book Signings</h2>
-      <p class="lede">Grab a signed copy of <em>Chasing Chaos, Finding Home</em>, meet me in person, and stay for a great night.</p>
+      <h2 id="events-h">Where to Find Me</h2>
+      <p class="lede">Grab a signed copy of <em>Chasing Chaos, Finding Home</em>, say hello, and stay for a great time.</p>
     </div>
     <div class="ev-list">
+      <article class="ev" data-end="2026-11-08T13:00:00-05:00">
+        <a class="ev-flyer" href="assets/flyer-daniella-strong.webp" target="_blank" rel="noopener"><img src="assets/flyer-daniella-strong.webp" alt="Flyer: Daniella Strong Benefit, Sunday November 8, 2026, 10 AM to 1 PM, VFW Palm Coast, hosted by 5&amp;Why. Vendors and raffle donations needed." width="800" height="1000" loading="lazy"><span>View flyer</span></a>
+        <div class="ev-body">
+          <p class="ev-tag">Community benefit · vendors &amp; raffle</p>
+          <h3>Daniella Strong Benefit</h3>
+          <ul class="ev-dates">
+            <li><span class="ev-day"><b>8</b>Nov</span><span class="ev-when"><b>Sunday, November 8</b>10:00 AM – 1:00 PM</span><a class="ev-cal" href="assets/events/daniella-strong-2026-11-08.ics" download>+ Add to calendar</a></li>
+          </ul>
+          <p>Come out and help our community support Daniella. I'll be there with signed copies of the book. Vendors and raffle donations are still welcome: vendor space is $25 with a table and chairs, or donate a raffle basket or prize.</p>
+          <p class="ev-where"><b>VFW · Palm Coast, FL</b><br>Hosted by 5&amp;Why · <a href="mailto:info@5andwhy.com">info@5andwhy.com</a> · <a href="tel:+19047753736">904-775-3736</a><br><a href="https://www.facebook.com/events/s/daniella-strong-benefit/1448562750761576/" target="_blank" rel="noopener">Event page on Facebook</a> · <a href="https://www.google.com/maps/search/?api=1&query=VFW%20Palm%20Coast%2C%20FL" target="_blank" rel="noopener">Get directions</a></p>
+        </div>
+      </article>
       <article class="ev" data-end="2026-11-27T23:00:00-05:00">
         <a class="ev-flyer" href="assets/flyer-southern-chaos.webp" target="_blank" rel="noopener"><img src="assets/flyer-southern-chaos.webp" alt="Flyer: Southern Chaos live in the European Village with a Jenn Kassan book signing, Friday November 27, 8 to 11 PM, Mile Marker 803 Clubhouse, Palm Coast" width="428" height="640" loading="lazy"><span>View flyer</span></a>
         <div class="ev-body">
@@ -1063,7 +1107,7 @@ footer a:hover{color:var(--gold)}
 (function(){var now=Date.now();
 document.querySelectorAll('[data-end]').forEach(function(el){if(Date.parse(el.getAttribute('data-end'))<now)el.remove();});
 var sec=document.getElementById('events');if(sec&&!sec.querySelector('.ev'))sec.remove();
-var nb=document.querySelector('.nb-events');if(nb&&!document.getElementById('events')&&!nb.hasAttribute('data-keep'))nb.remove();})();
+var mt=document.querySelector('.meet');if(mt&&(!document.getElementById('events')||!mt.querySelector('.meet-dates li')))mt.remove();})();
 </script>
 </body>
 </html>
