@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Figuring It Out//jennkassan.com//EN
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:STANDARD
+DTSTART:20261101T020000
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:cue-20261209@jennkassan.com
+DTSTAMP:20261103T170000Z
+DTSTART;TZID=America/New_York:20261209T190000
+DTEND;TZID=America/New_York:20261209T210000
+SUMMARY:Jenn Kassan book signing at Cue Note Billiards
+LOCATION:Cue Note Billiards\, 160 Cypress Point Pkwy\, Ste C114\, Palm Coast\, FL 32164
+DESCRIPTION:Meet Jenn Kassan\, author of Chasing Chaos\, Finding Home\, get a signed copy\, and hang out for a great night at Cue Note Billiards.
+URL:https://jennkassan.com/personal.html#events
+END:VEVENT
+END:VCALENDAR
