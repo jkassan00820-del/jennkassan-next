@@ -602,7 +602,36 @@ footer a:hover{color:var(--gold)}
 .sub-label{font-family:var(--serif-head);font-style:italic;font-weight:700;font-size:1.15rem;color:var(--earth);padding-right:.4rem;border-right:1px solid var(--line);margin-right:-.2rem;padding-right:1rem}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 118px)}
 @media (max-width:520px){.sub-in{gap:1.05rem}.sub-label{display:none}}
+
+/* ---------- book signings ---------- */
+.events{background:linear-gradient(180deg,color-mix(in srgb,var(--parchment) 35%,var(--bg)),var(--bg))}
+.ev-kicker{margin:0 0 .3rem;font-family:var(--serif-sub);font-style:italic;font-weight:600;font-size:1.25rem;color:var(--earth)}
+.ev-list{display:grid;gap:2rem;margin-top:2.6rem;max-width:1000px;margin-inline:auto}
+.ev{display:grid;grid-template-columns:260px 1fr;gap:2.2rem;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1.6rem;box-shadow:0 18px 40px -28px rgba(52,37,19,.45)}
+.ev-flyer{position:relative;display:block;border-radius:8px;overflow:hidden;box-shadow:0 12px 26px rgba(52,37,19,.25);text-decoration:none}
+.ev-flyer img{display:block;width:100%;height:auto;transition:transform .3s}
+.ev-flyer:hover img{transform:scale(1.03)}
+.ev-flyer span{position:absolute;left:.6rem;bottom:.6rem;background:rgba(33,69,52,.88);color:var(--cream);font-size:.75rem;padding:.25rem .6rem;border-radius:999px}
+.ev-tag{margin:0;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.ev-body h3{font-family:var(--serif-head);font-size:clamp(1.7rem,3vw,2.2rem);color:var(--forest);margin:.25rem 0 1rem}
+.ev-dates{list-style:none;margin:0 0 1.1rem;padding:0;display:grid;gap:.7rem}
+.ev-dates li{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.7rem .9rem;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.ev-day{display:flex;flex-direction:column;align-items:center;justify-content:center;width:58px;height:58px;border-radius:8px;background:var(--forest);color:var(--cream);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;line-height:1}
+.ev-day b{font-family:var(--serif-body);font-size:1.45rem;letter-spacing:0;color:var(--gold);margin-bottom:.2rem;font-variant-numeric:lining-nums}
+.ev-when{display:flex;flex-direction:column;flex:1;min-width:150px;font-size:.95rem;color:var(--muted)}
+.ev-when b{color:var(--ink);font-size:1.02rem}
+.ev-cal{font-size:.85rem;color:var(--earth);text-decoration-color:var(--gold);text-underline-offset:4px;white-space:nowrap}
+.ev-body>p{color:var(--muted);margin:.5rem 0}
+.ev-where{font-size:.95rem;line-height:1.6;border-left:3px solid var(--gold);padding-left:.9rem;margin-top:1rem!important}
+.ev-where b{color:var(--ink)}
+.ev-where a{color:var(--earth);text-underline-offset:4px}
+.ev-note{text-align:center;margin:2.2rem auto 0;color:var(--muted);max-width:60ch}
+.ev-note a{color:var(--earth)}
+.nb-events{margin:.5rem 0 0;font-size:.95rem;color:#E8DDC8}
+.nb-events a{color:var(--gold);font-weight:700;text-underline-offset:4px}
+@media (max-width:720px){.ev{grid-template-columns:1fr;padding:1.2rem}.ev-flyer{max-width:300px;margin-inline:auto}}
 </style>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at the Southern Chaos gig", "startDate": "2026-11-27T20:00:00-05:00", "endDate": "2026-11-27T23:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Mile Marker 803 Clubhouse", "address": {"@type": "PostalAddress", "streetAddress": "European Village", "addressLocality": "Palm Coast", "addressRegion": "FL", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-southern-chaos.webp", "description": "Live music from Southern Chaos and a book signing with Jenn Kassan, author of Chasing Chaos, Finding Home.", "performer": [{"@type": "MusicGroup", "name": "Southern Chaos"}, {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}], "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-08T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-09T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}}]</script>
 </head>
 <body id="top">
 
@@ -627,7 +656,7 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 118px)}
 <div class="subnav" role="navigation" aria-label="Personal page sections"><div class="wrap sub-in">
   <a class="sub-home" href="index.html" aria-label="Back to Figuring It Out home">&larr;</a>
   <span class="sub-label">Personal</span>
-  <a href="#book">The Book</a><a href="#inside">Inside</a><a href="#listen">Listen</a><a href="#journal">Journal</a><a href="#together">Community</a><a href="#did">I Did a Thing</a>
+  <a href="#book">The Book</a><a href="#events">Signings</a><a href="#inside">Inside</a><a href="#listen">Listen</a><a href="#journal">Journal</a><a href="#together">Community</a><a href="#did">I Did a Thing</a>
 </div></div>
 
 <!-- BOOK FEATURE -->
@@ -693,6 +722,45 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 118px)}
       </div>
       <p class="sc-invite">Has the book connected you with someone? <a class="community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">Share that story in the group.</a></p>
     </div>
+  </div>
+</section>
+
+<!-- BOOK SIGNINGS -->
+<section class="events" id="events" aria-labelledby="events-h">
+  <div class="wrap">
+    <div class="center">
+      <p class="ev-kicker">Come say hi</p>
+      <h2 id="events-h">Upcoming Book Signings</h2>
+      <p class="lede">Grab a signed copy of <em>Chasing Chaos, Finding Home</em>, meet me in person, and stay for a great night.</p>
+    </div>
+    <div class="ev-list">
+      <article class="ev" data-end="2026-11-27T23:00:00-05:00">
+        <a class="ev-flyer" href="assets/flyer-southern-chaos.webp" target="_blank" rel="noopener"><img src="assets/flyer-southern-chaos.webp" alt="Flyer: Southern Chaos live in the European Village with a Jenn Kassan book signing, Friday November 27, 8 to 11 PM, Mile Marker 803 Clubhouse, Palm Coast" width="428" height="640" loading="lazy"><span>View flyer</span></a>
+        <div class="ev-body">
+          <p class="ev-tag">Live music + book signing</p>
+          <h3>Southern Chaos at Mile Marker 803</h3>
+          <ul class="ev-dates">
+            <li><span class="ev-day"><b>27</b>Nov</span><span class="ev-when"><b>Friday, November 27</b>8:00 – 11:00 PM</span><a class="ev-cal" href="assets/events/southern-chaos-2026-11-27.ics" download>+ Add to calendar</a></li>
+          </ul>
+          <p>I'll be signing books and meeting the crowd while Southern Chaos rocks the stage. Good music, great stories, and the band that's part of the book.</p>
+          <p class="ev-where"><b>Mile Marker 803 Clubhouse</b><br>European Village, Palm Coast, FL<br><a href="https://www.google.com/maps/search/?api=1&query=Mile%20Marker%20803%20Clubhouse%2C%20European%20Village%2C%20Palm%20Coast%2C%20FL" target="_blank" rel="noopener">Get directions</a></p>
+        </div>
+      </article>
+      <article class="ev" data-end="2026-12-09T21:00:00-05:00">
+        <a class="ev-flyer" href="assets/flyer-cue-note.webp" target="_blank" rel="noopener"><img src="assets/flyer-cue-note.webp" alt="Flyer: Book signing with Jenn Kassan, author of Chasing Chaos, Finding Home, Tuesday December 8 and Wednesday December 9 at 7 PM, Cue Note Billiards, Palm Coast" width="800" height="1200" loading="lazy"><span>View flyer</span></a>
+        <div class="ev-body">
+          <p class="ev-tag">Two nights · book signing</p>
+          <h3>Cue Note Billiards</h3>
+          <ul class="ev-dates">
+            <li data-end="2026-12-08T21:00:00-05:00"><span class="ev-day"><b>8</b>Dec</span><span class="ev-when"><b>Tuesday, December 8</b>7:00 PM</span><a class="ev-cal" href="assets/events/cue-note-2026-12-08.ics" download>+ Add to calendar</a></li>
+            <li><span class="ev-day"><b>9</b>Dec</span><span class="ev-when"><b>Wednesday, December 9</b>7:00 PM</span><a class="ev-cal" href="assets/events/cue-note-2026-12-09.ics" download>+ Add to calendar</a></li>
+          </ul>
+          <p>Come meet the author, get a signed copy, and hang out for a great night of pool at Cue Note Billiards.</p>
+          <p class="ev-where"><b>Cue Note Billiards</b><br>160 Cypress Point Pkwy, Ste C114<br>Palm Coast, FL 32164<br><a href="https://www.google.com/maps/search/?api=1&query=Cue%20Note%20Billiards%2C%20160%20Cypress%20Point%20Pkwy%2C%20Ste%20C114%2C%20Palm%20Coast%2C%20FL%2032164" target="_blank" rel="noopener">Get directions</a></p>
+        </div>
+      </article>
+    </div>
+    <p class="ev-note">Can't make it? <a href="https://shop.ingramspark.com/b/084?params=i3juigIEQI1Hap575rEXMlIa1JMgY0cJALPpYAiAcjI" target="_blank" rel="noopener">Order direct</a> or <a href="https://a.co/d/00chcpUP" target="_blank" rel="noopener">buy on Amazon</a>, and follow the <a class="community-link" href="https://www.facebook.com/share/g/17vJJT11QF/" target="_blank" rel="noopener">community group</a> for the next signing.</p>
   </div>
 </section>
 
@@ -1163,6 +1231,12 @@ function upd(){tick=false;var i=-1;secs.forEach(function(el,k){if(el&&el.getBoun
 if(i===cur)return;cur=i;links.forEach(function(a,k){a.classList.toggle('on',k===i)});
 if(i>-1){var a=links[i],box=a.parentNode;box.scrollLeft=Math.max(0,a.offsetLeft-box.clientWidth/2+a.offsetWidth/2);}}
 addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('load',upd);upd();})();
+</script>
+<script>
+(function(){var now=Date.now();
+document.querySelectorAll('[data-end]').forEach(function(el){if(Date.parse(el.getAttribute('data-end'))<now)el.remove();});
+var sec=document.getElementById('events');if(sec&&!sec.querySelector('.ev'))sec.remove();
+var nb=document.querySelector('.nb-events');if(nb&&!document.getElementById('events')&&!nb.hasAttribute('data-keep'))nb.remove();})();
 </script>
 </body>
 </html>
