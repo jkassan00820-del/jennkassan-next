@@ -551,7 +551,12 @@ footer a:hover{color:var(--gold)}
 @media (max-width:860px){.menu-btn{margin-left:auto}.owner-btn{padding:.45rem .6rem}.owner-btn span{display:none}}
 @media (max-width:440px){.brand b{white-space:nowrap;font-size:1.02rem;letter-spacing:.03em}.brand img{width:34px}.head-in{gap:.6rem}}
 
-/* ---------- #1 news ---------- */
+/* ---------- reviews banner ---------- */
+.nb-stars{margin:.2rem 0 0;color:var(--gold);font-size:1.6rem;letter-spacing:.18em;line-height:1}
+.nb-sub{margin:.2rem 0 0;color:#E8DDC8;max-width:46ch}
+.nb-cta{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+.nb-ghost{background:transparent;border:1px solid var(--gold);color:var(--cream)}
+.nb-ghost:hover{background:rgba(200,157,74,.15)}
 .news-banner{background:var(--forest);color:var(--cream);text-align:center;padding:2.2rem 0 2rem;position:relative;overflow:hidden;border-bottom:4px solid var(--gold)}
 .news-banner::before,.news-banner::after{content:"";position:absolute;top:50%;width:260px;height:260px;border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);border-radius:50%;transform:translateY(-50%)}
 .news-banner::before{left:-120px}.news-banner::after{right:-120px}
@@ -656,6 +661,23 @@ footer a:hover{color:var(--gold)}
 .nb-events{margin:.5rem 0 0;font-size:.95rem;color:#E8DDC8}
 .nb-events a{color:var(--gold);font-weight:700;text-underline-offset:4px}
 @media (max-width:720px){.ev{grid-template-columns:1fr;padding:1.2rem}.ev-flyer{max-width:300px;margin-inline:auto}}
+
+/* ---------- reader reviews ---------- */
+.reviews{padding-block:clamp(2.6rem,6vw,4rem)}
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem;max-width:1080px;margin:2rem auto 0}
+.rv{position:relative;margin:0;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.4rem 1.2rem;display:flex;flex-direction:column;gap:.7rem;box-shadow:0 14px 30px -24px rgba(52,37,19,.45)}
+.rv:before{content:"\201C";position:absolute;top:-.35rem;right:1rem;font-family:var(--serif-head);font-size:4.4rem;line-height:1;color:var(--gold);opacity:.35}
+.rv-stars{color:var(--gold);letter-spacing:.14em;font-size:1rem}
+.rv blockquote{margin:0;font-family:var(--serif-sub);font-size:1.22rem;line-height:1.45;color:var(--ink);flex:1}
+.rv blockquote b{color:var(--forest)}
+.rv figcaption{font-size:.8rem;color:var(--muted);font-style:italic}
+.rv-lead{grid-column:1/-1;background:var(--forest);border-color:var(--forest);text-align:center;align-items:center;padding:2rem}
+.rv-lead blockquote{color:var(--cream);font-size:clamp(1.4rem,2.6vw,1.8rem);max-width:40ch}
+.rv-lead blockquote b{color:var(--gold)}
+.rv-lead figcaption{color:#C9BE9C}
+.rv-lead:before{left:50%;right:auto;transform:translateX(-50%);opacity:.5}
+.rv-more{text-align:center;margin:1.6rem 0 0}
+.rv-more a{color:var(--earth);text-underline-offset:4px}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Event", "name": "Twice Upon a Christmas: Christmas After Dark", "startDate": "2026-12-05T17:00:00-05:00", "endDate": "2026-12-05T20:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "isAccessibleForFree": true, "location": {"@type": "Place", "name": "The Cove at St. Johns", "address": {"@type": "PostalAddress", "addressLocality": "Fruit Cove", "addressRegion": "FL", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-twice-upon-a-christmas.webp", "description": "Holiday evening with 8 authors for adult readers, including Jenn Kassan signing Chasing Chaos, Finding Home. Artisan gifts, charcuterie and drinks. Free to attend.", "url": "https://www.facebook.com/share/1HhUjrZpvp/", "performer": {"@type": "Person", "name": "Jenn Kassan"}, "organizer": [{"@type": "Organization", "name": "5&Why"}, {"@type": "Organization", "name": "The Cove at St. Johns"}]},{"@context": "https://schema.org", "@type": "Event", "name": "Daniella Strong Benefit", "startDate": "2026-11-08T10:00:00-05:00", "endDate": "2026-11-08T13:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "VFW Palm Coast", "address": {"@type": "PostalAddress", "addressLocality": "Palm Coast", "addressRegion": "FL", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-daniella-strong.webp", "description": "Community benefit with vendors and raffle, hosted by 5&Why. Jenn Kassan will be there with signed copies of Chasing Chaos, Finding Home.", "organizer": {"@type": "Organization", "name": "5&Why", "email": "info@5andwhy.com"}, "url": "https://www.facebook.com/share/1CNUYUZCeB/"}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at the Southern Chaos gig", "startDate": "2026-11-27T20:00:00-05:00", "endDate": "2026-11-27T23:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Mile Marker 803 Clubhouse", "address": {"@type": "PostalAddress", "streetAddress": "European Village", "addressLocality": "Palm Coast", "addressRegion": "FL", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-southern-chaos.webp", "description": "Live music from Southern Chaos and a book signing with Jenn Kassan, author of Chasing Chaos, Finding Home.", "performer": [{"@type": "MusicGroup", "name": "Southern Chaos"}, {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}], "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "url": "https://www.facebook.com/share/1Cph82VrLA/"}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-08T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "url": "https://fb.me/e/4nV0NKYh2"}, {"@context": "https://schema.org", "@type": "Event", "name": "Jenn Kassan book signing at Cue Note Billiards", "startDate": "2026-12-09T19:00:00-05:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Cue Note Billiards", "address": {"@type": "PostalAddress", "streetAddress": "160 Cypress Point Pkwy, Ste C114", "addressLocality": "Palm Coast", "addressRegion": "FL", "postalCode": "32164", "addressCountry": "US"}}, "image": "https://jennkassan.com/assets/flyer-cue-note.webp", "description": "Meet Jenn Kassan, author of Chasing Chaos, Finding Home, and get a signed copy.", "performer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "organizer": {"@type": "Person", "name": "Jenn Kassan", "url": "https://jennkassan.com/"}, "url": "https://fb.me/e/6HDH3GOeA"}]</script>
 </head>
@@ -683,17 +705,28 @@ footer a:hover{color:var(--gold)}
   <a class="nb-cover" href="personal.html#book" aria-label="See the book"><img src="assets/book-cover.webp" alt="Cover of Chasing Chaos, Finding Home" width="140" height="210" loading="eager"></a>
   <div class="nb-in">
     <p class="nb-kicker">Thank you, readers!</p>
-    <p class="nb-big"><span class="nb-num">#1</span> on Amazon Kindle in <em>Survival Biographies &amp; Memoirs</em></p>
-    <ul class="nb-more">
-      <li><b>#2</b> in Personal Transformation</li>
-      <li><b>#3</b> in Memoirs</li>
-      <li><span class="stars" aria-hidden="true">★★★★★</span> <b>5.0</b> from 22 reviews</li>
-    </ul>
-    <div class="nb-cta"><a class="btn btn-gold" href="personal.html#book">See the book</a></div>
-    <p class="nb-small">Amazon Kindle Store rankings, November 1, 2026.</p>
+    <p class="nb-stars" aria-label="Five out of five stars">★★★★★</p>
+    <p class="nb-big"><span class="nb-num">20+</span> five-star reviews on <em>Amazon</em></p>
+    <p class="nb-sub">Every review so far is five stars. Thank you for reading, sharing and telling your friends.</p>
+    <div class="nb-cta"><a class="btn btn-gold" href="personal.html#book">See the book</a> <a class="btn nb-ghost" href="#rv-h">Read the reviews</a></div>
   </div>
   </div>
 </section>
+<!-- READER REVIEWS -->
+<section class="reviews" aria-labelledby="rv-h">
+  <div class="wrap">
+    <div class="center"><p class="ev-kicker">In their words</p><h2 id="rv-h">What Readers Are Saying</h2></div>
+    <div class="rv-grid">
+      <figure class="rv rv-lead"><span class="rv-stars" aria-label="Five stars">★★★★★</span><blockquote>Highly recommend this <b>heartfelt, funny, and beautifully honest</b> book. And Jenn, please never stop finding therapy in mowing the lawn.</blockquote><figcaption>Five-star Amazon review</figcaption></figure>
+      <figure class="rv"><span class="rv-stars" aria-label="Five stars">★★★★★</span><blockquote>Chasing Chaos <b>brought all the feels</b>. I laughed, I cried, I got angry, and I felt so many emotions as I made my way through the entire story.</blockquote><figcaption>Five-star Amazon review</figcaption></figure>
+      <figure class="rv"><span class="rv-stars" aria-label="Five stars">★★★★★</span><blockquote>What a <b>wonderful heartfelt story</b> about a woman looking for answers from her childhood and finding them in the most unexpected ways.</blockquote><figcaption>Five-star Amazon review</figcaption></figure>
+      <figure class="rv"><span class="rv-stars" aria-label="Five stars">★★★★★</span><blockquote><b>Absolutely loved your book!</b> Loved hearing all about your life and local places that I know by me. Easy and quick read which I like.</blockquote><figcaption>Five-star Amazon review</figcaption></figure>
+      <figure class="rv"><span class="rv-stars" aria-label="Five stars">★★★★★</span><blockquote><b>A great read!</b> Spend some time and share her journey.</blockquote><figcaption>Five-star Amazon review</figcaption></figure>
+    </div>
+    <p class="rv-more"><a href="https://www.amazon.com/dp/B0HHNQYH21#customerReviews" target="_blank" rel="noopener">Read all the reviews on Amazon</a> · <a href="personal.html#book">Get your copy</a></p>
+  </div>
+</section>
+
 <!-- MEET ME IN PERSON -->
 <section class="meet" aria-labelledby="meet-h">
   <div class="wrap meet-in">
