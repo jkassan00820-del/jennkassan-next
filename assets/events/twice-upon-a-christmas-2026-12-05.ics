@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Figuring It Out//jennkassan.com//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:twice-upon-20261205@jennkassan.com
+DTSTAMP:20261113T160000Z
+DTSTART;TZID=America/New_York:20261205T170000
+DTEND;TZID=America/New_York:20261205T200000
+SUMMARY:Twice Upon a Christmas: Christmas After Dark (Jenn Kassan signing)
+LOCATION:The Cove at St. Johns\, Fruit Cove\, FL
+DESCRIPTION:Meet 8 authors with books for adult readers\, including Jenn Kassan with signed copies of Chasing Chaos\, Finding Home. Artisan gifts\, a charcuterie cart and mocktail/cocktail vendor. Free to attend. Co-hosted by 5&Why and The Cove at St. Johns.
+URL:https://www.facebook.com/share/1HhUjrZpvp/
+END:VEVENT
+END:VCALENDAR
