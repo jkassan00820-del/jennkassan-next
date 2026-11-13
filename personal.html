@@ -669,10 +669,14 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 118px)}
 /* ---------- around town ---------- */
 .town{padding-block:clamp(2.6rem,6vw,4rem);background:linear-gradient(180deg,var(--bg),color-mix(in srgb,var(--parchment) 30%,var(--bg)))}
 .town-in{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(1.6rem,4vw,3.2rem);align-items:center;max-width:980px;margin-inline:auto}
-.town-vid video{display:block;width:100%;height:auto;border-radius:14px;background:#14241C;box-shadow:0 18px 40px -20px rgba(52,37,19,.55);outline:1px solid color-mix(in srgb,var(--gold) 50%,transparent);outline-offset:4px}
+.town-vid{position:relative;display:block}
+.town-play{position:absolute;inset:0;display:grid;place-items:center;font-size:3rem;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.5);border-radius:14px;background:rgba(20,36,28,.18);transition:background .2s}
+.town-vid:hover .town-play{background:rgba(20,36,28,.35)}
+.town-vid img{display:block;width:100%;height:auto;border-radius:14px;background:#14241C;box-shadow:0 18px 40px -20px rgba(52,37,19,.55);outline:1px solid color-mix(in srgb,var(--gold) 50%,transparent);outline-offset:4px}
 .town-txt h2{margin:.2rem 0 .9rem;text-align:left}
 .town-txt p{color:var(--muted)}
-.town-cta{margin:1.1rem 0 .6rem}
+.town-cta{margin:1.1rem 0 .6rem;display:flex;gap:.6rem;flex-wrap:wrap}
+@media (max-width:760px){.town-cta{justify-content:center}}
 .town-credit{font-size:.8rem;font-style:italic}
 @media (max-width:760px){.town-in{grid-template-columns:1fr}.town-vid{max-width:320px;margin-inline:auto}.town-txt{text-align:center}.town-txt h2{text-align:center}}
 </style>
@@ -762,19 +766,17 @@ html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 118px)}
 <!-- AROUND TOWN -->
 <section class="town" id="around-town" aria-labelledby="town-h">
   <div class="wrap town-in">
-    <div class="town-vid">
-      <video controls playsinline preload="none" poster="assets/video/b-section-poster.webp" width="456" height="670">
-        <source src="assets/video/b-section-book-exchange.mp4" type="video/mp4">
-        Your browser can't play this video.
-      </video>
-    </div>
+    <a class="town-vid" href="https://www.facebook.com/share/r/19TcCPFVpS/" target="_blank" rel="noopener" aria-label="Watch the video on The B-Section Book Exchange's Facebook page">
+      <img src="assets/video/b-section-poster.webp" alt="The B-Section Book Exchange introducing local author Jenn Kassan" width="456" height="670" loading="lazy">
+      <span class="town-play" aria-hidden="true">▶</span>
+    </a>
     <div class="town-txt">
       <p class="ev-kicker">Around town</p>
       <h2 id="town-h">Find the Book at <span style="white-space:nowrap">The B-Section</span> Book Exchange</h2>
       <p>A copy of <em>Chasing Chaos, Finding Home</em> now lives on the shelves at The B-Section Book Exchange in Palm Coast, a little free book exchange for the community. Thank you for the warm welcome and for shining a light on local authors.</p>
       <p>Stop by, take a book, leave a book, and grab one of my cards while you're there. If the story speaks to you, grab a copy of your own.</p>
-      <div class="town-cta"><a class="btn btn-forest" href="#book">Get your copy</a></div>
-      <p class="town-credit">Video courtesy of The B-Section Book Exchange, Palm Coast, FL</p>
+      <div class="town-cta"><a class="btn btn-forest" href="https://www.facebook.com/share/r/19TcCPFVpS/" target="_blank" rel="noopener">Watch on Facebook</a> <a class="btn btn-line" href="#book">Get your copy</a></div>
+      <p class="town-credit">The video lives on The B-Section Book Exchange's Facebook page. Show them some love!</p>
     </div>
   </div>
 </section>
